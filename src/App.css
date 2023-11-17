@@ -1,3 +1,120 @@
+* {
+  padding: 0px;
+  margin:0;
+  box-sizing: border-box;
+}
+.light {
+  width:15px;
+  height:15px;
+  border:1px solid black;
+  border-radius:100%;
+}
+.conn {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+.connect {
+  margin-left:20px;
+}
+.title {
+  margin-bottom: 10px;
+}
+.strait_purple {
+  width:200px;
+  height:3px;
+  background-color: #A14DA7;
+  color : #A14DA7;
+  margin-bottom: 40px;
+}
+.cups_center {
+  margin-bottom: 40px;
+}
+.strait_green {
+  width:200px;
+  height:3px;
+  background-color: #3FDD23;
+  color : #3FDD23;
+  margin-bottom: 40px;
+}
+.button_green {
+  background-color: #3FDD23;
+}
+.load_CV {
+  margin-bottom: 40px;
+}
+.button_purple {
+  background-color: #A14DA7;
+  color: white;
+}
+.display_column {
+  display: flex;
+  flex-direction: column;
+}
+.six_img {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+.three_components {
+  height:130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+/* .imgs_info {
+  display: flex;
+  flex-direction: row;
+} */
+.img_cups {
+  width:200px;
+}
+.council {
+  margin-bottom: 20px;
+}
+.img_info {
+  width:70px;
+}
+.img_cup_info {
+  width:70px;
+}
+.img_meca {
+  width:70px;
+}
+.img_cup_meca {
+  width:70px;
+}
+.img_fluides {
+  width:70px;
+}
+.img_cup_fluides {
+  width:70px;
+}
+.img_thermo {
+  width:70px;
+}
+.img_cup_thermo {
+  width:70px;
+}
+.img_plasmas {
+  width:70px;
+}
+.img_cup_plasmas {
+  width:70px;
+}
+.img_electronique {
+  width:70px;
+}
+.img_cup_electronique {
+  width:70px;
+}
+.bord_right {
+  margin-right:20px;
+}
+.bord_left {
+  margin-left: 20px;
+}
 #root {
   max-width: 1280px;
   margin: 0 auto;

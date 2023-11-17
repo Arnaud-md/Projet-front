@@ -13,6 +13,10 @@ function App() {
 
   const router = createBrowserRouter([
     {
+      path: "/",
+      element: <Home />,
+    },
+    {
       path: "/connexion",
       element: <Connexion />,
     },
