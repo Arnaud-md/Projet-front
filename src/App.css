@@ -3,6 +3,77 @@
   margin:0;
   box-sizing: border-box;
 }
+h1 {
+  font-size:30px;
+}
+.result_size {
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+.result {
+  text-align: center;
+}
+.bac {
+  margin-bottom: 10px;
+}
+.placeholder {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  height:28px;
+  width:329px;
+}
+.size {
+  height:56px;
+}
+.repeat_password {
+  display:flex;
+  flex-direction: row;
+  justify-content: start;
+}
+.ph {
+  height:24px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+.ph_etudes {
+  width:329px;
+  height:48px;
+  margin-bottom: 10px;
+}
+.radio {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  margin-right: 50px;
+}
+.sexe {
+  display: flex;
+  flex-direction: row;
+}
+.rd {
+  margin-right: 10px;
+}
+.add_studies {
+  margin-bottom: 10px;
+}
+.info {
+  color: #EC3B3B;
+}
+.bot_buttons {
+  justify-content: space-between;
+  text-align: center;
+}
+.bot_buttons_inscription {
+  margin-top: 40px;
+  text-align: center;
+}
+.img_cup_info_result {
+  width:200px;
+  margin-bottom:20px;
+}
 .light {
   width:15px;
   height:15px;
@@ -25,10 +96,13 @@
   height:3px;
   background-color: #A14DA7;
   color : #A14DA7;
+}
+.margin_bottom {
   margin-bottom: 40px;
 }
 .cups_center {
   margin-bottom: 40px;
+  text-align: center;
 }
 .strait_green {
   width:200px;
@@ -39,13 +113,29 @@
 }
 .button_green {
   background-color: #3FDD23;
+  width:180px;
+  
+  font-size:24px;
+  border-radius: 50%;
+}
+.button_green_qcm {
+  background-color: #3FDD23;
+  width:150px;
+  font-size:18px;
+  border-radius: 50%;
+}
+.council {
+  font-size: 24px;
+  text-align: center;
 }
 .load_CV {
   margin-bottom: 40px;
+  text-align: center;
 }
 .button_purple {
   background-color: #A14DA7;
   color: white;
+  border-radius: 50%;
 }
 .display_column {
   display: flex;
@@ -56,9 +146,11 @@
   flex-direction: row;
   flex-wrap: wrap;
   margin-bottom: 40px;
+  text-align: center;
+  justify-content: space-between;
 }
 .three_components {
-  height:130px;
+  height:180px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -68,7 +160,7 @@
   flex-direction: row;
 } */
 .img_cups {
-  width:200px;
+  width:250px;
 }
 .council {
   margin-bottom: 20px;
@@ -119,7 +211,7 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .logo {

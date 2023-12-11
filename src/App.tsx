@@ -1,13 +1,15 @@
 import { useState } from 'react'
 import './App.css'
-import Connexion from './Connexion'
+import Connexion from './components/Connexion'
 import {
   RouterProvider,
   BrowserRouter,
   createBrowserRouter
 } from "react-router-dom";
-import Home from './Home'
-import Type_de_QCM from './Type_de_QCM';
+import Home from './components/Home'
+import Type_de_QCM from './components/Type_de_QCM';
+import Demande_inscription from './components/Demande_inscription';
+import Inscription from './components/Inscription';
 
 function App() {
 
@@ -27,6 +29,14 @@ function App() {
     {
       path: "/home",
       element: <Home />,
+    },
+    {
+      path: "/demande_inscription",
+      element: <Demande_inscription />,
+    },
+    {
+      path: "/inscription",
+      element: <Inscription />,
     }
   ]);
   return (
