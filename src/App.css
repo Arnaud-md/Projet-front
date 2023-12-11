@@ -27,6 +27,12 @@ h1 {
 .size {
   height:56px;
 }
+.mbp {
+  margin-bottom: 40px;
+}
+.connect_button {
+  margin-bottom: 240px;
+}
 .repeat_password {
   display:flex;
   flex-direction: row;
@@ -88,6 +94,9 @@ h1 {
 .connect {
   margin-left:20px;
 }
+.connexion {
+  text-align: center;
+}
 .title {
   margin-bottom: 10px;
 }
@@ -99,6 +108,9 @@ h1 {
 }
 .margin_bottom {
   margin-bottom: 40px;
+}
+.margin_bottom_plus {
+  margin-bottom: 160px;
 }
 .cups_center {
   margin-bottom: 40px;

@@ -45,12 +45,31 @@ const handleClick = useCallback(async ()=> {
 
     return (
         <div>
-            <p>Pseudo</p>
-            <input  onChange={handleChange} type="text"></input>
-            <p>Mot de passe</p>
-            <input  onChange={handleChange2} type="password"></input>
-            <button onClick={handleClick}>Se connecter</button>
-        </div>
+            <div className="conn">
+                <div className="light"></div>
+                <p className="connect">Connecté</p>
+            </div>
+            <div className="display_column">
+                <div className="title">
+                <h1>Connexion</h1>
+                </div>
+                <div className="strait_purple margin_bottom_plus"></div>
+                <div className="connexion">
+                    <div className="placeholder">
+                        <p>Adresse mail </p>
+                        <input onChange={handleChange} type="text" className="mail"></input>
+                    </div>
+                    <div className="placeholder mbp">
+                        <p>Mot de passe</p>
+                        <input onChange={handleChange2} type="password" className="mdp"></input>
+                    </div>
+                    <button onClick={handleClick} className="button_purple connect_button">Connexion</button>
+                    <p className="mbp">Nouvel utilisateur : inscrivez-vous</p>
+                    <button className="button_purple inscription_button">Inscription</button>
+                    
+                </div>
+            </div>
+        </div> 
     );
 };
 
