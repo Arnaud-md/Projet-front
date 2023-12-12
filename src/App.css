@@ -8,10 +8,18 @@ h1 {
 }
 .result_size {
   font-size: 24px;
-  margin-bottom: 40px;
+  /* margin-bottom: 40px; */
+  height: 110px;
 }
 .result {
   text-align: center;
+}
+.margin_size {
+  margin-top: 80px;
+  margin-bottom: 200px;
+}
+.margin_bottom_size {
+  margin-bottom: 140px;
 }
 .bac {
   margin-bottom: 10px;
@@ -31,7 +39,11 @@ h1 {
   margin-bottom: 40px;
 }
 .connect_button {
-  margin-bottom: 240px;
+  margin-bottom: 40px;
+}
+.errormsg {
+  color: #EC3B3B;
+  height:200px;
 }
 .repeat_password {
   display:flex;
@@ -69,8 +81,24 @@ h1 {
   color: #EC3B3B;
 }
 .bot_buttons {
-  justify-content: space-between;
+  display:flex;
+  justify-content: space-around;
   text-align: center;
+}
+.mtp {
+  margin-top:60px;
+}
+.bot_btn_mtp {
+  margin-top: 20px;
+}
+.bot_btn_mtp_info2 {
+  margin-top: 180px;
+}
+.bot_btn_mtp_meca3 {
+  margin-top: 340px;
+}
+.bot_btn_mtp_fluides3 {
+  margin-top: 160px;
 }
 .bot_buttons_inscription {
   margin-top: 40px;
@@ -167,6 +195,18 @@ h1 {
   flex-direction: column;
   justify-content: flex-end;
 }
+.list {
+  font-size: 20px;
+}
+.strait_grey {
+  width:329px;
+  height:2px;
+  background-color: #7c7c7c;
+}
+.width_size {
+  width: 110px;
+  height: 80px;
+}
 /* .imgs_info {
   display: flex;
   flex-direction: row;
@@ -176,6 +216,9 @@ h1 {
 }
 .council {
   margin-bottom: 20px;
+}
+.img {
+  width:70px;
 }
 .img_info {
   width:70px;

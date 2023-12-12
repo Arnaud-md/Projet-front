@@ -64,6 +64,9 @@ const handleClick = useCallback(async ()=> {
                         <input onChange={handleChange2} type="password" className="mdp"></input>
                     </div>
                     <button onClick={handleClick} className="button_purple connect_button">Connexion</button>
+                    <div className="errormsg">
+                        <p>Adresse email ou mot de passe invalide</p>
+                    </div>
                     <p className="mbp">Nouvel utilisateur : inscrivez-vous</p>
                     <button className="button_purple inscription_button">Inscription</button>
                     
