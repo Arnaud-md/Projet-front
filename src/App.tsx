@@ -22,6 +22,13 @@ import Entreprises_meca3 from './components/Entreprises_meca3';
 import Entreprises_meca_fluides1 from './components/Entreprises_meca_fluides1';
 import Entreprises_meca_fluides2 from './components/Entreprises_meca_fluides2';
 import Entreprises_meca_fluides3 from './components/Entreprises_meca_fluides3';
+import Entreprises_thermo1 from './components/Entreprises_thermo1';
+import Entreprises_thermo2 from './components/Entreprises_thermo2';
+import Entreprises_plasmas1 from './components/Entreprises_plasmas1';
+import Entreprises_plasmas2 from './components/Entreprises_plasmas2';
+import Entreprises_elec1 from './components/Entreprises_elec1';
+import Entreprises_elec2 from './components/Entreprises_elec2';
+import Entreprises_elec3 from './components/Entreprises_elec3';
 
 function App() {
 
@@ -97,6 +104,34 @@ function App() {
     {
       path: "/entreprises_mecanique_fluides3",
       element: <Entreprises_meca_fluides3 />,
+    },
+    {
+      path: "/entreprises_thermodynamique1",
+      element: <Entreprises_thermo1 />,
+    },
+    {
+      path: "/entreprises_thermodynamique2",
+      element: <Entreprises_thermo2 />,
+    },
+    {
+      path: "/entreprises_physique_des_plasmas1",
+      element: <Entreprises_plasmas1 />,
+    },
+    {
+      path: "/entreprises_physique_des_plasmas2",
+      element: <Entreprises_plasmas2 />,
+    },
+    {
+      path: "/entreprises_electronique1",
+      element: <Entreprises_elec1 />,
+    },
+    {
+      path: "/entreprises_electronique2",
+      element: <Entreprises_elec2 />,
+    },
+    {
+      path: "/entreprises_electronique3",
+      element: <Entreprises_elec3 />,
     }
   ]);
   return (

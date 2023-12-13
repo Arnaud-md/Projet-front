@@ -7,7 +7,7 @@ import { useRef } from "react";
 import coupes from "../img/coupes.jpg";
 
 const Home = () => {
-
+let isconnect = localStorage.getItem("isconnected")
     return (
         <div>
             <div className="conn">
@@ -28,9 +28,15 @@ const Home = () => {
             <p className="council">Répondez à un QCM pour télécharger un CV de compétences</p>
             <div className="strait_green"></div>
             <div className="bot_buttons">
-                <button className="button_purple">Entreprises</button>
-                <button className="button_purple">QCM</button>
-                <button className="button_purple">Connexion</button>
+            <form action="http://localhost:5173/entreprises">
+                <button type="submit" className="button_purple">Entreprises</button>
+            </form>
+            <form action="http://localhost:5173/type_de_qcm">
+                <button type="submit" className="button_purple">QCM</button>
+            </form>
+            <form action="http://localhost:5173/connexion">
+                <button type="submit" className="button_purple">Connexion</button>
+            </form>
             </div>
             </div>
             

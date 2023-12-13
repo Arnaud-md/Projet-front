@@ -1,4 +1,4 @@
-const Entreprises_meca3 = () => {
+const Entreprises_elec3 = () => {
 
     return (
         <div>
@@ -8,28 +8,32 @@ const Entreprises_meca3 = () => {
             </div>
             <div className="display_column">
             <div className="title">
-            <h1>Liste des entreprises en mécanique 3/3</h1>
+            <h1>Liste des entreprises en électronique 3/3</h1>
             </div>
             <div className="strait_purple margin_bottom"></div>
             <div className="list">
-                <p>Reel  </p>
+                <p>Régional Intérim et R Intérim, Groupe Triangle Solutions RH</p>
+                <div className="strait_grey"></div>
+                <p>LIP Industrie Bâtiment</p>
+                <div className="strait_grey"></div>
+                <p>Boulanger </p>
+                <div className="strait_grey"></div>
+                <p>Partnaire </p>
+                <div className="strait_grey"></div>
+                <p>ELSYS Design</p>
+                <div className="strait_grey"></div>
+                <p>Temporis </p>
+                <div className="strait_grey"></div>
+                <p>Actua </p>
                 <div className="strait_grey"></div>
                 <p>Page Personnel </p>
                 <div className="strait_grey"></div>
-                <p>Assystem </p>
-                <div className="strait_grey"></div>
-                <p>SERES TECHNOLOGIES </p>
-                <div className="strait_grey"></div>
-                <p>Sei Groupe</p>
-                <div className="strait_grey"></div>
-                <p>Team.is </p>
-                <div className="strait_grey"></div>
             </div>
-            <div className="bot_buttons bot_btn_mtp_meca3">
+            <div className="bot_buttons bot_btn_mtp_elec3">
             <form action="http://localhost:5173">
                 <button type="submit" className="button_purple width_size">Accueil</button>
             </form>
-            <form action="http://localhost:5173/entreprises_mecanique2">
+            <form action="http://localhost:5173/entreprises_electronique2">
                 <button type="submit" className="button_purple width_size">Page précédente</button>
             </form>
             </div>
@@ -39,4 +43,4 @@ const Entreprises_meca3 = () => {
     );
 };
 
-export default Entreprises_meca3;
+export default Entreprises_elec3;

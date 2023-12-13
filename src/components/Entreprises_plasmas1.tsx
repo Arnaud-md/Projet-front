@@ -1,4 +1,4 @@
-const Entreprises_informatique2 = () => {
+const Entreprises_plasmas1 = () => {
 
     return (
         <div>
@@ -8,42 +8,46 @@ const Entreprises_informatique2 = () => {
             </div>
             <div className="display_column">
             <div className="title">
-            <h1>Liste des entreprises en informatique 2/2</h1>
+            <h1>Liste des entreprises en physique des plasmas 1/2</h1>
             </div>
             <div className="strait_purple margin_bottom"></div>
             <div className="list">
-                <p>Mydral </p>
+                <p>Aurora Cold Plasma Sterilisation</p>
                 <div className="strait_grey"></div>
-                <p>Club Employés</p>
+                <p>CEA </p>
                 <div className="strait_grey"></div>
-                <p>TOMCAT TALENTS</p>
+                <p>CNRS </p>
                 <div className="strait_grey"></div>
-                <p>Axionable </p>
+                <p>STMicroelectronics </p>
                 <div className="strait_grey"></div>
-                <p>Bonial </p>
+                <p>ONERA </p>
                 <div className="strait_grey"></div>
-                <p>Generix Group</p>
+                <p>Safran </p>
                 <div className="strait_grey"></div>
-                <p>Technis </p>
+                <p>GE Renewable Energy</p>
                 <div className="strait_grey"></div>
-                <p>Cheerz </p>
+                <p>Symbio </p>
                 <div className="strait_grey"></div>
-                <p>DBM Partners</p>
+                <p>Polygon Physics</p>
                 <div className="strait_grey"></div>
-                <p>TrustUp Group</p>
+                <p>IDIL Fibres Optiques</p>
                 <div className="strait_grey"></div>
-                <p>Batch</p>
+                <p>Sodern </p>
                 <div className="strait_grey"></div>
-                
+                <p>Université d'Orléans</p>
+                <div className="strait_grey"></div>
+                <p>Ecole Centrale Paris</p>
+                <div className="strait_grey"></div>
+                <p>Thales</p>
+                <div className="strait_grey"></div>
             </div>
-            <div className="bot_buttons bot_btn_mtp_info2">
+            <div className="bot_buttons bot_btn_mtp">
             <form action="http://localhost:5173">
                 <button type="submit" className="button_purple width_size">Accueil</button>
             </form>
-            <form action="http://localhost:5173/entreprises_informatique1">
-                <button type="submit" className="button_purple width_size">Page précédente</button>
+            <form action="http://localhost:5173/entreprises_physique_des_plasmas2">
+                <button type="submit" className="button_purple width_size">Page suivante</button>
             </form>
-                {/* <button className="button_purple width_size">Page suivante</button> */}
             </div>
             </div>
             
@@ -51,4 +55,4 @@ const Entreprises_informatique2 = () => {
     );
 };
 
-export default Entreprises_informatique2;
+export default Entreprises_plasmas1;

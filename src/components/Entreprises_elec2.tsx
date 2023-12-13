@@ -1,4 +1,4 @@
-const Entreprises_meca2 = () => {
+const Entreprises_elec2 = () => {
 
     return (
         <div>
@@ -8,53 +8,53 @@ const Entreprises_meca2 = () => {
             </div>
             <div className="display_column">
                 <div className="title">
-                    <h1>Liste des entreprises en mécanique 2/3</h1>
+                    <h1>Liste des entreprises en électronique 2/3</h1>
                 </div>
                 <div className="strait_purple margin_bottom"></div>
                 <div className="list">
-                    <p>Pharea</p>
+                    <p>Adsearch </p>
                     <div className="strait_grey"></div>
-                    <p>Orano </p>
+                    <p>Groupe Piment </p>
                     <div className="strait_grey"></div>
-                    <p>Ariane </p>
+                    <p>WellJob Interim </p>
                     <div className="strait_grey"></div>
-                    <p>Groupe Ortec </p>
+                    <p>Iziwork </p>
                     <div className="strait_grey"></div>
-                    <p>Alten DDPS</p>
+                    <p>Acass </p>
                     <div className="strait_grey"></div>
-                    <p>Groupe ADF </p>
+                    <p>Harry Hope</p>
                     <div className="strait_grey"></div>
-                    <p>EDF </p>
+                    <p>Darty </p>
                     <div className="strait_grey"></div>
-                    <p>Ingeliance Technologies</p>
+                    <p>Thales </p>
                     <div className="strait_grey"></div>
-                    <p>Akkodis </p>
+                    <p>Safran </p>
                     <div className="strait_grey"></div>
-                    <p>Expectra </p>
+                    <p>Start People </p>
                     <div className="strait_grey"></div>
-                    <p>Davidson Consulting </p>
+                    <p>SUEZ </p>
                     <div className="strait_grey"></div>
-                    <p>CEA </p>
+                    <p>Interaction </p>
                     <div className="strait_grey"></div>
-                    <p>Arkadia Group</p>
+                    <p>Samsic Emploi</p>
                     <div className="strait_grey"></div>
-                    <p>LR Technologies Groupe</p>
+                    <p>Celad </p>
                     <div className="strait_grey"></div>
-                    <p>Capgemini Engineering </p>
+                    <p>Sup Interim</p>
                     <div className="strait_grey"></div>
-                    <p>Synergie  </p>
+                    <p>Expleo </p>
                     <div className="strait_grey"></div>
                 </div>
                 <div className="bot_buttons bot_btn_mtp">
                 <form action="http://localhost:5173">
                     <button type="submit" className="button_purple width_size">Accueil</button>
                 </form>
-                    <form action="http://localhost:5173/entreprises_mecanique1">
+                <form action="http://localhost:5173/entreprises_electronique1">
                     <button type="submit" className="button_purple width_size">Page précédente</button>
                 </form>
-                    <form action="http://localhost:5173/entreprises_mecanique3">
-                </form>
+                <form action="http://localhost:5173/entreprises_electronique3">
                     <button type="submit" className="button_purple width_size">Page suivante</button>
+                </form>
                 </div>
             </div>
             
@@ -62,4 +62,4 @@ const Entreprises_meca2 = () => {
     );
 };
 
-export default Entreprises_meca2;
+export default Entreprises_elec2;

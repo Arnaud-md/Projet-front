@@ -1,4 +1,4 @@
-const Entreprises_meca_fluides2 = () => {
+const Entreprises_thermo1 = () => {
 
     return (
         <div>
@@ -8,52 +8,50 @@ const Entreprises_meca_fluides2 = () => {
             </div>
             <div className="display_column">
             <div className="title">
-            <h1>Liste des entreprises en mécanique des fluides 2/3</h1>
+            <h1>Liste des entreprises en thermodynamique 1/2</h1>
             </div>
             <div className="strait_purple margin_bottom"></div>
             <div className="list">
-                <p>Framatome </p>
+                <p>Daikin France</p>
                 <div className="strait_grey"></div>
-                <p>Réseau alliance </p>
+                <p>Fives</p>
                 <div className="strait_grey"></div>
-                <p>B2R Group</p>
+                <p>SUEZ </p>
                 <div className="strait_grey"></div>
-                <p>Andros </p>
+                <p>FED Ingénierie</p>
                 <div className="strait_grey"></div>
-                <p>Manpower </p>
+                <p>ESILV </p>
                 <div className="strait_grey"></div>
-                <p>Skayl </p>
+                <p>Hutchinson </p>
                 <div className="strait_grey"></div>
-                <p>Adsearch </p>
+                <p>YACK </p>
                 <div className="strait_grey"></div>
-                <p>NEO2</p>
+                <p>TEYOMA </p>
                 <div className="strait_grey"></div>
-                <p>Elcimaï </p>
+                <p>Reper </p>
                 <div className="strait_grey"></div>
-                <p>Easy Skill</p>
+                <p>Absolut Hydrogen</p>
                 <div className="strait_grey"></div>
-                <p>Orano </p>
+                <p>LR Technologies Sud Ouest</p>
                 <div className="strait_grey"></div>
-                <p>Expectra </p>
+                <p>Absolut System</p>
                 <div className="strait_grey"></div>
-                <p>LNE </p>
+                <p>ENGIE ENERGIE SERVICES</p>
                 <div className="strait_grey"></div>
-                <p>Amanora Technologies</p>
+                <p>Intuis </p>
                 <div className="strait_grey"></div>
-                <p>Skayl Schiltigheim</p>
+                <p>Air Liquide</p>
                 <div className="strait_grey"></div>
-     
+                <p>AVANTIS Group</p>
+                <div className="strait_grey"></div>
             </div>
             <div className="bot_buttons bot_btn_mtp">
-                <form action="http://localhost:5173">
-                    <button type="submit" className="button_purple width_size">Accueil</button>
-                </form>
-                <form action="http://localhost:5173/entreprises_mecanique_fluides1">
-                    <button type="submit" className="button_purple width_size">Page précédente</button>
-                </form>
-                <form action="http://localhost:5173/entreprises_mecanique_fluides3">
-                    <button type="submit" className="button_purple width_size">Page suivante</button>
-                </form>
+            <form action="http://localhost:5173">
+                <button type="submit" className="button_purple width_size">Accueil</button>
+            </form>
+            <form action="http://localhost:5173/entreprises_thermodynamique2">
+                <button type="submit" className="button_purple width_size">Page suivante</button>
+            </form>
             </div>
             </div>
             
@@ -61,4 +59,4 @@ const Entreprises_meca_fluides2 = () => {
     );
 };
 
-export default Entreprises_meca_fluides2;
+export default Entreprises_thermo1;

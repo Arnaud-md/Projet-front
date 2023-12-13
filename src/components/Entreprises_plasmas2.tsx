@@ -1,4 +1,4 @@
-const Entreprises_informatique2 = () => {
+const Entreprises_plasmas2 = () => {
 
     return (
         <div>
@@ -8,39 +8,43 @@ const Entreprises_informatique2 = () => {
             </div>
             <div className="display_column">
             <div className="title">
-            <h1>Liste des entreprises en informatique 2/2</h1>
+            <h1>Liste des entreprises en physique des plasmas 2/2</h1>
             </div>
             <div className="strait_purple margin_bottom"></div>
             <div className="list">
-                <p>Mydral </p>
+                <p>Armelio </p>
                 <div className="strait_grey"></div>
-                <p>Club Employés</p>
+                <p>LP2IB</p>
                 <div className="strait_grey"></div>
-                <p>TOMCAT TALENTS</p>
+                <p>SCIENTECH Intérim</p>
                 <div className="strait_grey"></div>
-                <p>Axionable </p>
+                <p>AGEPS </p>
                 <div className="strait_grey"></div>
-                <p>Bonial </p>
+                <p>Octapharma </p>
                 <div className="strait_grey"></div>
-                <p>Generix Group</p>
+                <p>Ecole polytechnique</p>
                 <div className="strait_grey"></div>
-                <p>Technis </p>
+                <p>LFB </p>
                 <div className="strait_grey"></div>
-                <p>Cheerz </p>
+                <p>MASSON MARINE </p>
                 <div className="strait_grey"></div>
-                <p>DBM Partners</p>
+                <p>Sayens </p>
                 <div className="strait_grey"></div>
-                <p>TrustUp Group</p>
+                <p>ANR </p>
                 <div className="strait_grey"></div>
-                <p>Batch</p>
+                <p>Sofitex </p>
+                <div className="strait_grey"></div>
+                <p>cetim </p>
+                <div className="strait_grey"></div>
+                <p>Sorbonne Université </p>
                 <div className="strait_grey"></div>
                 
             </div>
-            <div className="bot_buttons bot_btn_mtp_info2">
+            <div className="bot_buttons bot_btn_mtp_plasmas2">
             <form action="http://localhost:5173">
                 <button type="submit" className="button_purple width_size">Accueil</button>
             </form>
-            <form action="http://localhost:5173/entreprises_informatique1">
+            <form action="http://localhost:5173/entreprises_physique_des_plasmas1">
                 <button type="submit" className="button_purple width_size">Page précédente</button>
             </form>
                 {/* <button className="button_purple width_size">Page suivante</button> */}
@@ -51,4 +55,4 @@ const Entreprises_informatique2 = () => {
     );
 };
 
-export default Entreprises_informatique2;
+export default Entreprises_plasmas2;

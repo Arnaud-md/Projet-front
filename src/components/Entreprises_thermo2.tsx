@@ -1,4 +1,4 @@
-const Entreprises_meca3 = () => {
+const Entreprises_thermo2 = () => {
 
     return (
         <div>
@@ -8,30 +8,42 @@ const Entreprises_meca3 = () => {
             </div>
             <div className="display_column">
             <div className="title">
-            <h1>Liste des entreprises en mécanique 3/3</h1>
+            <h1>Liste des entreprises en thermodynamique 2/2</h1>
             </div>
             <div className="strait_purple margin_bottom"></div>
             <div className="list">
-                <p>Reel  </p>
+                <p>Stago </p>
                 <div className="strait_grey"></div>
-                <p>Page Personnel </p>
+                <p>Anderson RH</p>
                 <div className="strait_grey"></div>
-                <p>Assystem </p>
+                <p>ARIAL INDUSTRIES</p>
                 <div className="strait_grey"></div>
-                <p>SERES TECHNOLOGIES </p>
+                <p>HAYS </p>
                 <div className="strait_grey"></div>
-                <p>Sei Groupe</p>
+                <p>idex </p>
                 <div className="strait_grey"></div>
-                <p>Team.is </p>
+                <p>OTTEO </p>
                 <div className="strait_grey"></div>
+                <p>CETIAT </p>
+                <div className="strait_grey"></div>
+                <p>Dalkia </p>
+                <div className="strait_grey"></div>
+                <p>INTERIM D'OC</p>
+                <div className="strait_grey"></div>
+                <p>Carrier</p>
+                <div className="strait_grey"></div>
+                <p>Socotec</p>
+                <div className="strait_grey"></div>
+                
             </div>
-            <div className="bot_buttons bot_btn_mtp_meca3">
+            <div className="bot_buttons bot_btn_mtp_info2">
             <form action="http://localhost:5173">
                 <button type="submit" className="button_purple width_size">Accueil</button>
             </form>
-            <form action="http://localhost:5173/entreprises_mecanique2">
+            <form action="http://localhost:5173/entreprises_thermodynamique1">
                 <button type="submit" className="button_purple width_size">Page précédente</button>
             </form>
+                {/* <button className="button_purple width_size">Page suivante</button> */}
             </div>
             </div>
             
@@ -39,4 +51,4 @@ const Entreprises_meca3 = () => {
     );
 };
 
-export default Entreprises_meca3;
+export default Entreprises_thermo2;

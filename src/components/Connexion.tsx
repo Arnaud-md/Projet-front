@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 const Connexion = () => {
-const [pseudo, setPseudo]=useState("");
+const [email, setEmail]=useState("");
 const [mdp, setMdp]=useState("");
 const navigate = useNavigate();
 
 const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     console.log('new value', e.target.value)
 
-            setPseudo(e.target.value)
+            setEmail(e.target.value)
 
 
 }, [])
@@ -24,24 +24,31 @@ const handleChange2 = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
 
 }, [])
 
-const handleClick = useCallback(async ()=> {
-    const response = await fetch("http://localhost:1337/api/auth/local", {
+const handleClick = useCallback(async() => {
+    // Lancez une requête POST vers l'API avec les données de connexion
+    const response = await fetch('http://localhost:1337/api/auth/local', {
+        method: 'POST',
         headers: {
-            "Content-Type": "application/json",
+          'Content-Type': 'application/json'
         },
-        method: "POST",
         body: JSON.stringify({
-            identifier: pseudo,
-            password: mdp
+          email: email,
+          password: mdp
         })
-    })
-    const data = await response.json()
-
-    console.log("reponse : ",data, data.jwt);
-    if(data.jwt) {
+      })
+      const data = await response.text()
+      console.log("rtte", data)
+      if (data!=="le mot de passe n'est pas le bon" && data!=="l'email saisi n'est pas le bon") {
+        localStorage.setItem('token', data)
+        localStorage.setItem('isconnected',"true")
         navigate("/home");
-    }
-},[pseudo,mdp,navigate])
+      }
+    // Si la connexion est réussie,  stockez le token dans le localStorage
+    // Et redirigez l'utilisateur vers la page d'accueil
+
+    // Si la connexion est échouée, affichez un message d'erreur
+    
+}, [email, mdp])
 
     return (
         <div>
@@ -68,7 +75,9 @@ const handleClick = useCallback(async ()=> {
                         <p>Adresse email ou mot de passe invalide</p>
                     </div>
                     <p className="mbp">Nouvel utilisateur : inscrivez-vous</p>
-                    <button className="button_purple inscription_button">Inscription</button>
+                    <form action="http://localhost:5173/inscription">
+                    <button type="submit" className="button_purple inscription_button">Inscription</button>
+                    </form>
                     
                 </div>
             </div>
