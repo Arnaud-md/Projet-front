@@ -13,13 +13,20 @@ import cup_meca from "../img/coupe_bronze.jpg";
 import cup_fluides from "../img/coupe_argent.jpg";
 
 const Type_de_QCM = () => {
+    const isconnect = localStorage.getItem("isconnected");
 
     return (
         <div>
-            <div className="conn">
-                <div className="light"></div>
-                <p className="connect">Connecté</p>
-            </div>
+                      {isconnect==="true" ? 
+                    <div className="connect_info">
+                        <div className="light"></div>
+                        <p className="connect">Connecté</p>
+                    </div> :
+                    <div className="connect_info">
+                        <div className="light_off"></div>
+                        <p className="connect">Non connecté</p>
+                    </div>
+                }
             <div className="display_column">
                 <div className="title">
                     <h1>Types de QCM</h1>
@@ -31,7 +38,9 @@ const Type_de_QCM = () => {
                             <img src={info} className="img_info"></img>
                             <img src={cup_info} className="img_cup_info"></img>
                          </div>
-                        <button className="button_green_qcm">Informatique</button>
+                         <form action='http://localhost:5173/qcm_informatique'>
+                        <button type="submit" className="button_green_qcm">Informatique</button>
+                        </form>
                     </div>
                     <div className="three_components">
                         <div className="imgs_meca">

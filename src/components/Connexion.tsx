@@ -8,6 +8,8 @@ const [email, setEmail]=useState("");
 const [mdp, setMdp]=useState("");
 const navigate = useNavigate();
 
+const isconnect = localStorage.getItem("isconnected");
+
 const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     console.log('new value', e.target.value)
 
@@ -52,10 +54,16 @@ const handleClick = useCallback(async() => {
 
     return (
         <div>
-            <div className="conn">
-                <div className="light"></div>
-                <p className="connect">Connecté</p>
-            </div>
+            {isconnect==="true" ? 
+                    <div className="connect_info">
+                        <div className="light"></div>
+                        <p className="connect">Connecté</p>
+                    </div> :
+                    <div className="connect_info">
+                        <div className="light_off"></div>
+                        <p className="connect">Non connecté</p>
+                    </div>
+                }
             <div className="display_column">
                 <div className="title">
                 <h1>Connexion</h1>

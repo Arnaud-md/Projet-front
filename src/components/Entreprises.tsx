@@ -9,13 +9,19 @@ import cup_meca from "../img/coupe_bronze.jpg";
 import cup_fluides from "../img/coupe_argent.jpg";
 
 const Entreprises = () => {
-
+    const isconnect = localStorage.getItem("isconnected");
     return (
         <div>
-            <div className="conn">
-                <div className="light"></div>
-                <p className="connect">Connecté</p>
-            </div>
+                      {isconnect==="true" ? 
+                    <div className="connect_info">
+                        <div className="light"></div>
+                        <p className="connect">Connecté</p>
+                    </div> :
+                    <div className="connect_info">
+                        <div className="light_off"></div>
+                        <p className="connect">Non connecté</p>
+                    </div>
+                }
             <div className="display_column">
                 <div className="title">
                     <h1>Entreprises</h1>

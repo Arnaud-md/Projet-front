@@ -119,8 +119,16 @@ h1 {
   height:15px;
   border:1px solid black;
   border-radius:100%;
+  background-color: #7AFF0D;
 }
-.conn {
+.light_off {
+  width:15px;
+  height:15px;
+  border:1px solid black;
+  border-radius:100%;
+  background-color: #EC3B3B;
+}
+.connect_info {
   display: flex;
   flex-direction: row;
   margin-bottom: 20px;

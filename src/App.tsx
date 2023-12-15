@@ -29,6 +29,7 @@ import Entreprises_plasmas2 from './components/Entreprises_plasmas2';
 import Entreprises_elec1 from './components/Entreprises_elec1';
 import Entreprises_elec2 from './components/Entreprises_elec2';
 import Entreprises_elec3 from './components/Entreprises_elec3';
+import QCM_info from './components/QCM_info';
 
 function App() {
 
@@ -132,6 +133,10 @@ function App() {
     {
       path: "/entreprises_electronique3",
       element: <Entreprises_elec3 />,
+    },
+    {
+      path: "/qcm_informatique",
+      element: <QCM_info />,
     }
   ]);
   return (

@@ -1,11 +1,17 @@
 const Entreprises_plasmas2 = () => {
-
+    const isconnect = localStorage.getItem("isconnected");
     return (
         <div>
-            <div className="conn">
-            <div className="light"></div>
-            <p className="connect">Connecté</p>
-            </div>
+                      {isconnect==="true" ? 
+                    <div className="connect_info">
+                        <div className="light"></div>
+                        <p className="connect">Connecté</p>
+                    </div> :
+                    <div className="connect_info">
+                        <div className="light_off"></div>
+                        <p className="connect">Non connecté</p>
+                    </div>
+                }
             <div className="display_column">
             <div className="title">
             <h1>Liste des entreprises en physique des plasmas 2/2</h1>
