@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const QCM_info = () => {
+    const [numQuestion,setNumQuestion]=useState(0);
     const [question,setQuestion]=useState("");
     const[reponseA,setReponseA]=useState("");
     const[reponseB,setReponseB]=useState("");
@@ -11,34 +13,84 @@ const QCM_info = () => {
     const[choiceb,setChoiceb]=useState(false);
     const[choicec,setChoicec]=useState(false);
     const[choiced,setChoiced]=useState(false);
+    const[tabrand,setTabrand]=useState([] as number[]);
+    const[score,setScore]=useState(0);
+    const[numPage,setNumPage]=useState(1);
     const isconnect = localStorage.getItem("isconnected");
-    // const rd = Math.floor(Math.random()*20+1);
-    const rd = 1;
+    const navigate = useNavigate();
+    let rand = Math.floor(Math.random()*30+1);
+    let trouve=true;
+        for(let i=0;i<tabrand.length;i++) {
+            if(rand===tabrand[i]) {
+                trouve=true;
+                rand = Math.floor(Math.random()*30+1);
+                i=0;
+            }
+            else {
+                trouve=false;
+            }
+            if(trouve) {
+                
+            }
+        }
     // console.log("random : ",rd);
-    const rand = Math.floor(Math.random()*4+1);
-    console.log("rand : ",rand);
+    // const rand = Math.floor(Math.random()*4+1);
+    // console.log("rand : ",rand);
 
     useEffect(()=> {
         const qcm = async()=> {
-            const response = await fetch('http://localhost:1337/api/qcm/informatique/1', {
+            const response = await fetch(('http://localhost:1337/api/qcm/informatique/'+rand), {
             })
             const data = await response.json()
             console.log("rtte", data)
+                setNumQuestion(data.numQuestion);
                 setQuestion(data.question);
                 setReponseA(data.reponseA);
                 setReponseB(data.reponseB);
                 setReponseC(data.reponseC);
                 setReponseD(data.reponseD);
                 setBonnereponse(data.valide);
+                setChoicea(false);
+                setChoiceb(false);
+                setChoicec(false);
+                setChoiced(false);
         }
         qcm();
-        
-    // Si la connexion est réussie,  stockez le token dans le localStorage
-    // Et redirigez l'utilisateur vers la page d'accueil
+        if(numPage===11) {
+            navigate(("/results/"));
+        }
+    }, [tabrand,numPage]);
 
-    // Si la connexion est échouée, affichez un message d'erreur
-    
-    }, [question,reponseA,reponseB,reponseC,reponseD,bonnereponse]);
+    const handleClickRandom = useCallback(async()=> {
+        setTabrand([...tabrand,rand]);
+        setNumPage(numPage+1);
+        let sc = score;
+        if((bonnereponse===1&&choicea&&!choiceb&&!choicec&&!choiced)||(bonnereponse===2&&!choicea&&choiceb&&!choicec&&!choiced)||
+        (bonnereponse===3&&!choicea&&!choiceb&&choicec&&!choiced)||(bonnereponse===4&&!choicea&&!choiceb&&!choicec&&choiced)) {
+                setScore(score+1);
+                sc++;
+        }
+        
+        if(numPage===9){
+            const response = await fetch("http://localhost:1337/api/results", {
+                headers: new Headers({
+                    "Content-Type": "application/json",
+                }),
+                method: "POST",
+                body: JSON.stringify({
+                    email: "",
+                    score: sc,
+                    subject: "informatique"
+                }),
+            })
+        
+            console.log(response)
+            const data = await response.json()
+            console.log(data)
+            console.log("sc : ",sc)
+        } 
+    },[tabrand]);
+
     const handleChangeA = useCallback(() => {
         setChoicea(!choicea);
     }, [choicea]);
@@ -51,6 +103,8 @@ const QCM_info = () => {
     const handleChangeD = useCallback(() => {
         setChoiced(!choiced);
     }, [choiced]);
+    console.log("numPage : ",numPage);
+    console.log("score : ",score);
         return (
             <div>
                 {isconnect==="true" ? 
@@ -68,28 +122,31 @@ const QCM_info = () => {
                         <h1>QCM d'informatique</h1>
                     </div>
                     <div className="strait_purple margin_bottom"></div>
-                    <div>
-                        <p>Question 1 : </p>
-                        <p>{question}</p>
-                        <input onClick={handleChangeA} checked={choicea} type="radio" className="radio"></input>
-                        <p>{reponseA}</p>
-                        <input onClick={handleChangeB} checked={choiceb} type="radio" className="radio"></input>
-                        <p>{reponseB}</p>
-                        <input onClick={handleChangeC} checked={choicec} type="radio" className="radio"></input>
-                        <p>{reponseC}</p>
-                        <input onClick={handleChangeD} checked={choiced} type="radio" className="radio"></input>
-                        <p>{reponseD}</p>
+                    <div className="quiz">
+                        <p>Question {numPage} : </p>
+                        
+                        <p className="question">{question}</p>
+                        <div className="response">
+                        <input onClick={handleChangeA} checked={choicea} type="radio" className="radio_quiz"></input>
+                        <span className="wrap"><p>{reponseA}</p></span>
+                        </div>
+                        <div className="response">
+                        <input onClick={handleChangeB} checked={choiceb} type="radio" className="radio_quiz"></input>
+                        <span className="wrap"><p>{reponseB}</p></span>
+                        </div>
+                        <div className="response">
+                        <input onClick={handleChangeC} checked={choicec} type="radio" className="radio_quiz"></input>
+                        <span className="wrap"><p>{reponseC}</p></span>
+                        </div>
+                        <div className="response">
+                        <input onClick={handleChangeD} checked={choiced} type="radio" className="radio_quiz"></input>
+                        <span className="wrap"><p>{reponseD}</p></span>
+                        </div>
                     </div>
                     <div className="bot_buttons">
-                        <form action="http://localhost:5173/entreprises">
-                            <button type="submit" className="button_purple">Entreprises</button>
-                        </form>
-                        <form action="http://localhost:5173/type_de_qcm">
-                            <button type="submit" className="button_purple">QCM</button>
-                        </form>
-                        <form action="http://localhost:5173/connexion">
-                            <button type="submit" className="button_purple">Connexion</button>
-                        </form>
+                 
+                            <button onClick={handleClickRandom} className="button_purple">{numPage===10 ? "Valider" : "Question suivante"}</button>
+                   
                     </div>
                 </div> 
             </div>

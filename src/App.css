@@ -223,6 +223,27 @@ h1 {
   width: 110px;
   height: 80px;
 }
+.quiz {
+  height:600px;
+}
+.response {
+  display: flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+  margin-top:20px ;
+}
+.radio_quiz {
+  margin-right: 40px;
+}
+.question {
+  margin-top:20px;
+}
+.wrap {
+  display: inline;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width:260px;
+}
 /* .imgs_info {
   display: flex;
   flex-direction: row;
