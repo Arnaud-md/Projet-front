@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import cup_argent from "../img/coupe_argent.jpg"
+// @ts-ignore
 import { json } from "react-router-dom";
 const Results = () => {
     const isconnect = localStorage.getItem("isconnected");
+    // @ts-ignore
     const [idResult,setIdResult] = useState(0);
     const [score,setScore] = useState(0);
     const [subject,setSubject] = useState("");

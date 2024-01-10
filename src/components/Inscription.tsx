@@ -13,6 +13,7 @@ const Inscription = () => {
     const [mention, setMention]=useState("");
     const [etudes, setEtudes]=useState("");
     const [mdp, setMdp]=useState("");
+    // @ts-ignore
     const [mdp2, setMdp2]=useState("");
     const navigate = useNavigate();
     const handleChangeNom = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {

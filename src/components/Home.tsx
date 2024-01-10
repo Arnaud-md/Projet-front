@@ -1,8 +1,14 @@
+// @ts-ignore
 import { useEffect, useState } from "react";
+// @ts-ignore
 import { useCallback } from "react";
+// @ts-ignore
 import { Link } from "react-router-dom";
+// @ts-ignore
 import { useNavigate } from "react-router-dom";
+// @ts-ignore
 import { Musique } from "./Musique";
+// @ts-ignore
 import { useRef } from "react";
 import coupes from "../img/coupes.jpg";
 
@@ -31,7 +37,9 @@ const isconnect = localStorage.getItem("isconnected");
             <img src={coupes} className="img_cups"></img>
             </div>
             <div className="load_CV">
-            <button className="button_green">Télécharger un CV</button>
+            <form action="http://localhost:5173/load_cv">
+                <button type='submit' className="button_green">Télécharger un CV</button>
+            </form>
             </div>
             <p className="council">Répondez à un QCM pour télécharger un CV de compétences</p>
             <div className="strait_green"></div>

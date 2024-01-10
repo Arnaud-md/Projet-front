@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const QCM_info = () => {
+    // @ts-ignore
     const [numQuestion,setNumQuestion]=useState(0);
     const [question,setQuestion]=useState("");
     const[reponseA,setReponseA]=useState("");
@@ -34,8 +35,8 @@ const QCM_info = () => {
             }
         }
     // console.log("random : ",rd);
-    // const rand = Math.floor(Math.random()*4+1);
-    // console.log("rand : ",rand);
+     const randomnumber = Math.floor(Math.random()*4+1);
+     console.log("rand : ",randomnumber);
 
     useEffect(()=> {
         const qcm = async()=> {

@@ -1,8 +1,14 @@
+// @ts-ignore
 import info from "../img/informatique.jpg";
+// @ts-ignore
 import meca from "../img/mecanique.jpg";
+// @ts-ignore
 import fluides from "../img/mecanique_des_fluides.jpg";
+// @ts-ignore
 import thermo from "../img/thermodynamique.jpeg";
-import plasmas from "../img/physique_des_plasmas.jpg";
+// @ts-ignore
+import plasmas from "../img/physique_des_plasmas.jpg";// @ts-ignore
+
 import electronique from "../img/electronique.jpg";
 import cup_gold from "../img/coupe_or.jpg";
 import cup_bronze from "../img/coupe_bronze.jpg";
