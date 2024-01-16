@@ -85,8 +85,12 @@ const Type_de_QCM = () => {
                 </div>
 
             <div className="bot_buttons mtp">
-                <button className={"button_purple bord_right"}>Accueil</button>
-                <button className="button_purple bord_left">Connexion</button>
+            <form action="http://localhost:5173/home">
+                <button type="submit" className={"button_purple bord_right"}>Accueil</button>
+            </form>
+            <form action="http://localhost:5173/connexion">
+                <button type="submit" className="button_purple bord_left">Connexion</button>
+            </form>
             </div>
         </div> 
     </div>

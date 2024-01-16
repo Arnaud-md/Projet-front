@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 const Connexion = () => {
 const [email, setEmail]=useState("");
 const [mdp, setMdp]=useState("");
+const [iscorrect, setIscorrect]=useState(true);
 const navigate = useNavigate();
 
 const isconnect = localStorage.getItem("isconnected");
@@ -29,7 +30,7 @@ const handleChange2 = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
 
 const handleClick = useCallback(async() => {
     // Lancez une requête POST vers l'API avec les données de connexion
-    const response = await fetch('http://localhost:1337/api/auth/local', {
+    const response = await fetch('http://localhost:8887/api/auth/local', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -45,6 +46,11 @@ const handleClick = useCallback(async() => {
         localStorage.setItem('token', data)
         localStorage.setItem('isconnected',"true")
         navigate("/home");
+      }
+      else {
+        setIscorrect(false);
+        console.log("iscorrect false");
+        navigate("/connexion")
       }
     // Si la connexion est réussie,  stockez le token dans le localStorage
     // Et redirigez l'utilisateur vers la page d'accueil
@@ -80,9 +86,11 @@ const handleClick = useCallback(async() => {
                         <input onChange={handleChange2} type="password" className="mdp"></input>
                     </div>
                     <button onClick={handleClick} className="button_purple connect_button">Connexion</button>
+                    {iscorrect?
+                    <div></div>:
                     <div className="errormsg">
                         <p>Adresse email ou mot de passe invalide</p>
-                    </div>
+                    </div>}
                     <p className="mbp">Nouvel utilisateur : inscrivez-vous</p>
                     <form action="http://localhost:5173/inscription">
                     <button type="submit" className="button_purple inscription_button">Inscription</button>

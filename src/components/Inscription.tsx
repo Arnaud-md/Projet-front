@@ -56,7 +56,7 @@ const Inscription = () => {
     }, []);
     const handleClick = useCallback(async() => {
         // Lancez une requête POST vers l'API avec les données de connexion
-        const response = await fetch('http://localhost:1337/api/auth/local/register', {
+        const response = await fetch('http://localhost:8887/api/auth/local/register', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
@@ -77,6 +77,26 @@ const Inscription = () => {
           if (data!=="l'email que vous avez saisi est déjà utilisé") {
             
             localStorage.setItem('token', data);
+        //     const response2 = await fetch('http://localhost:8887/api/users', {
+        //         method: 'POST',
+        //     headers: {
+        //       'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify({
+        //       nom: nom,
+        //       prenom: prenom,
+        //       email: email,
+        //       ismasculin: m,
+        //       filiere: filiere,
+        //       mention: mention,
+        //       etudes: etudes,
+        //       password: mdp
+        //     })
+        //   })
+        //   const data = await response2.text()
+        //   })
+
+            console.log("vous allez etre redirigé vers home");
             navigate("/home");
           }
         // Si la connexion est réussie,  stockez le token dans le localStorage
