@@ -77,6 +77,7 @@ const Inscription = () => {
           if (data!=="l'email que vous avez saisi est déjà utilisé") {
             
             localStorage.setItem('token', data);
+            localStorage.setItem('isconnected',"true")
         //     const response2 = await fetch('http://localhost:8887/api/users', {
         //         method: 'POST',
         //     headers: {
