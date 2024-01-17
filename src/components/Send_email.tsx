@@ -1,5 +1,36 @@
+import { setDefaultAutoSelectFamily } from "net";
+import { userInfo } from "os";
+import { useEffect, useState } from "react";
+import { setEnvironmentData } from "worker_threads";
+
+import.meta.env.VITE_PORT;
+const port = import.meta.env.VITE_PORT ? parseInt(import.meta.env.VITE_PORT as string) : 1337
 const Send_email = () => {
     const isconnect = localStorage.getItem("isconnected");
+    const [nom,setNom] = useState("");
+    const [prenom,setPrenom] = useState("");
+    const [email,setEmail] = useState("");
+    const [ismasculin,setIsmasculin] = useState(true);
+    const [filiere,setFiliere] = useState("");
+    const [mention,setMention] = useState("");
+    const [etudes,setEtudes] = useState("");
+
+    useEffect(()=> {
+        const user = async()=> {
+            const response = await fetch(('http://localhost:'+port+'/api/users/me'), {
+            })
+            const data = await response.json();
+            setNom(data.nom);
+            setPrenom(data.prenom);
+            setEmail(data.email);
+            setIsmasculin(data.ismasculin);
+            setFiliere(data.filiere);
+            setMention(data.mention);
+            setEtudes(data.etudes);
+        }
+        user();
+    },[])
+    console.log("nom : ",nom);
     return (
         <div>
                       {isconnect==="true" ? 
@@ -18,7 +49,7 @@ const Send_email = () => {
                 </div>
                 <div className="strait_purple margin_bottom"></div>
                 <div className="result">
-                    <p className="result_size margin_size">Votre CV a été envoyé à l'adresse Ward@gmail.com</p>
+                    <p className="result_size margin_size">Votre CV a été envoyé à l'adresse {} Ward@gmail.com</p>
                     <p className="result_size margin_bottom_size">Vous pouvez aussi le télécharger depuis l'accueil</p>
                 </div>
             </div>

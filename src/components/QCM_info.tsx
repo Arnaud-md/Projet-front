@@ -1,5 +1,9 @@
 import { useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+// import 'dotenv/config';
+// import process from 'node:process';
+import.meta.env.VITE_PORT;
+const port = import.meta.env.VITE_PORT ? parseInt(import.meta.env.VITE_PORT as string) : 1337
 
 const QCM_info = () => {
     // @ts-ignore
@@ -37,10 +41,10 @@ const QCM_info = () => {
     // console.log("random : ",rd);
      const randomnumber = Math.floor(Math.random()*4+1);
      console.log("rand : ",randomnumber);
-
+// 1337
     useEffect(()=> {
         const qcm = async()=> {
-            const response = await fetch(('http://localhost:1337/api/qcm/informatique/'+rand), {
+            const response = await fetch(('http://localhost:'+port+'/api/qcm/informatique/'+rand), {
             })
             const data = await response.json()
             console.log("rtte", data)
@@ -73,7 +77,7 @@ const QCM_info = () => {
         }
         
         if(numPage===9){
-            const response = await fetch("http://localhost:1337/api/results", {
+            const response = await fetch("http://localhost:8887/api/results", {
                 headers: new Headers({
                     "Content-Type": "application/json",
                 }),

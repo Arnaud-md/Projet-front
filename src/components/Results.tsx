@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import cup_argent from "../img/coupe_argent.jpg"
+import.meta.env.VITE_PORT;
 // @ts-ignore
 import { json } from "react-router-dom";
+
+const port = import.meta.env.VITE_PORT ? parseInt(import.meta.env.VITE_PORT as string) : 1337
 const Results = () => {
     const isconnect = localStorage.getItem("isconnected");
     // @ts-ignore
@@ -10,7 +13,7 @@ const Results = () => {
     const [subject,setSubject] = useState("");
     useEffect(()=> {
         const resultat = async()=> {
-            const response = await fetch('http://localhost:1337/api/results', {
+            const response = await fetch('http://localhost:'+port+'/api/results', {
             }) 
             const data = await response.json() as any;
             // data.length-1;
@@ -53,7 +56,9 @@ const Results = () => {
                 </div>
             </div>
             <div className="bot_buttons_inscription">
-                <button className={"button_purple bord_right"}>Valider</button>
+            <form action='http://localhost:5173/send_email'>
+                <button type='submit' className={"button_purple bord_right"}>Valider</button>
+            </form>
             </div>
         </div> 
     );
