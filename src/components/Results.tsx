@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
-import cup_argent from "../img/coupe_argent.jpg"
+import cup_or from "../img/coupe_or.jpg";
+import cup_argent from "../img/coupe_argent.jpg";
+import cup_bronze from "../img/coupe_bronze.jpg";
 import.meta.env.VITE_PORT;
 // @ts-ignore
 import { json } from "react-router-dom";
@@ -49,7 +51,14 @@ const Results = () => {
                 <div className="result">
                     <p className="result_size">Vous avez {score} bonnes réponses au QCM {subject}</p>
                     <div className="result_cup">
-                        <img src={cup_argent} className="img_cup_info_result"></img>
+                        {score===9||score===10 ?
+                        <img src={cup_or} className="img_cup_info_result"></img>:
+                        score===7||score==8 ?
+                        <img src={cup_argent} className="img_cup_info_result"></img>:
+                        score===5||score===6 ?
+                        <img src={cup_bronze} className="img_cup_info_result"></img>:
+                        <div></div>
+                        }
                     </div>
                     <p className="result_size">Rang Argent</p>
                     <p className="result_size"></p>

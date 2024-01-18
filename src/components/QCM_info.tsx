@@ -40,7 +40,7 @@ const QCM_info = () => {
         }
     // console.log("random : ",rd);
      const randomnumber = Math.floor(Math.random()*4+1);
-     console.log("rand : ",randomnumber);
+     console.log("randomnumber : ",randomnumber);
 // 1337
     useEffect(()=> {
         const qcm = async()=> {
