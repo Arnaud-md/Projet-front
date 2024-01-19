@@ -3,28 +3,27 @@ import cup_or from "../img/coupe_or.jpg";
 import cup_argent from "../img/coupe_argent.jpg";
 import cup_bronze from "../img/coupe_bronze.jpg";
 import.meta.env.VITE_PORT;
-// @ts-ignore
-import { json } from "react-router-dom";
+
 
 const port = import.meta.env.VITE_PORT ? parseInt(import.meta.env.VITE_PORT as string) : 1337
 const Results = () => {
     const isconnect = localStorage.getItem("isconnected");
-    // @ts-ignore
-    const [idResult,setIdResult] = useState(0);
+ 
+    //const [idResult,setIdResult] = useState(0);
     const [score,setScore] = useState(0);
     const [subject,setSubject] = useState("");
     useEffect(()=> {
         const resultat = async()=> {
             const response = await fetch('http://localhost:'+port+'/api/results', {
             }) 
-            const data = await response.json() as any;
+            const data = await response.json();
             // data.length-1;
             const highest = data[data.length-1]
-            const id = highest.id;
+//            const id = highest.id;
             // const highest = data[Object.keys(data).sort().pop()];
             //const highest = Object.keys(data).sort().pop();
             console.log("highest : ",highest);
-            setIdResult(id);
+            //setIdResult(id);
             setScore(highest.score);
             setSubject(highest.subject);
             console.log("rtte", data);

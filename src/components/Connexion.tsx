@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { useCallback } from "react";
-// @ts-ignore
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 const Connexion = () => {
@@ -57,7 +55,7 @@ const handleClick = useCallback(async() => {
 
     // Si la connexion est échouée, affichez un message d'erreur
     
-}, [email, mdp])
+}, [email, mdp, navigate])
 
     return (
         <div>

@@ -1,11 +1,7 @@
-// @ts-ignore
-import { useState } from 'react'
 import './App.css'
 import Connexion from './components/Connexion'
 import {
   RouterProvider,
-  // @ts-ignore
-  BrowserRouter,
   createBrowserRouter
 } from "react-router-dom";
 import Home from './components/Home'

@@ -6,8 +6,7 @@ import.meta.env.VITE_PORT;
 const port = import.meta.env.VITE_PORT ? parseInt(import.meta.env.VITE_PORT as string) : 1337
 
 const QCM_info = () => {
-    // @ts-ignore
-    const [numQuestion,setNumQuestion]=useState(0);
+
     const [question,setQuestion]=useState("");
     const[reponseA,setReponseA]=useState("");
     const[reponseB,setReponseB]=useState("");
@@ -34,10 +33,11 @@ const QCM_info = () => {
             else {
                 trouve=false;
             }
-            if(trouve) {
+            // if(trouve) {
                 
-            }
+            // }
         }
+        console.log('trouve',trouve);
     // console.log("random : ",rd);
      const randomnumber = Math.floor(Math.random()*4+1);
      console.log("randomnumber : ",randomnumber);
@@ -48,7 +48,7 @@ const QCM_info = () => {
             })
             const data = await response.json()
             console.log("rtte", data)
-                setNumQuestion(data.numQuestion);
+                //setNumQuestion(data.numQuestion);
                 setQuestion(data.question);
                 setReponseA(data.reponseA);
                 setReponseB(data.reponseB);
@@ -64,7 +64,7 @@ const QCM_info = () => {
         if(numPage===11) {
             navigate(("/results/"));
         }
-    }, [tabrand,numPage]);
+    }, [tabrand,numPage,rand,navigate]);
 
     const handleClickRandom = useCallback(async()=> {
         setTabrand([...tabrand,rand]);
@@ -94,7 +94,7 @@ const QCM_info = () => {
             console.log(data)
             console.log("sc : ",sc)
         } 
-    },[tabrand]);
+    },[tabrand,bonnereponse,choicea,choiceb,choicec,choiced,numPage,rand,score]);
 
     const handleChangeA = useCallback(() => {
         setChoicea(!choicea);

@@ -13,7 +13,6 @@ const Inscription = () => {
     const [mention, setMention]=useState("");
     const [etudes, setEtudes]=useState("");
     const [mdp, setMdp]=useState("");
-    // @ts-ignore
     const [mdp2, setMdp2]=useState("");
     const navigate = useNavigate();
     const handleChangeNom = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
@@ -30,10 +29,10 @@ const Inscription = () => {
     }, []);
     const handleChangeMasculin = useCallback(() => {
                 setM(!m);
-    }, []);
+    }, [m]);
     const handleChangeFeminin = useCallback(() => {
         setF(!f);
-    }, []);
+    }, [f]);
     const handleChangeFiliere = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
         console.log('new value', e.target.value)
         setFiliere(e.target.value);
@@ -56,6 +55,7 @@ const Inscription = () => {
     }, []);
     const handleClick = useCallback(async() => {
         // Lancez une requête POST vers l'API avec les données de connexion
+        if(mdp===mdp2) {
         const response = await fetch('http://localhost:8887/api/auth/local/register', {
             method: 'POST',
             headers: {
@@ -100,12 +100,13 @@ const Inscription = () => {
             console.log("vous allez etre redirigé vers home");
             navigate("/home");
           }
+        }
         // Si la connexion est réussie,  stockez le token dans le localStorage
         // Et redirigez l'utilisateur vers la page d'accueil
 
         // Si la connexion est échouée, affichez un message d'erreur
         
-    }, [nom,prenom,email,m,filiere,mention,etudes,mdp]);
+    }, [nom,prenom,email,m,filiere,mention,etudes,mdp,mdp2,navigate]);
     return (
         <div>
                       {isconnect==="true" ? 

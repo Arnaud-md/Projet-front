@@ -1,15 +1,5 @@
-// @ts-ignore
-import { useEffect, useState } from "react";
-// @ts-ignore
 import { useCallback } from "react";
-// @ts-ignore
-import { Link, Navigate } from "react-router-dom";
-// @ts-ignore
 import { useNavigate } from "react-router-dom";
-// @ts-ignore
-import { Musique } from "./Musique";
-// @ts-ignore
-import { useRef } from "react";
 import coupes from "../img/coupes.jpg";
 
 const Home = () => {
@@ -18,7 +8,7 @@ const navigate = useNavigate();
 const handleClick = useCallback(()=>{
 localStorage.clear();
 navigate("/");
-},[])
+},[navigate])
     return (
         <div>
             

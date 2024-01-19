@@ -1,7 +1,6 @@
-import { setDefaultAutoSelectFamily } from "net";
-import { userInfo } from "os";
+
 import { useEffect, useState } from "react";
-import { setEnvironmentData } from "worker_threads";
+
 
 import.meta.env.VITE_PORT;
 const port = import.meta.env.VITE_PORT ? parseInt(import.meta.env.VITE_PORT as string) : 1337
@@ -31,6 +30,12 @@ const Send_email = () => {
         user();
     },[])
     console.log("nom : ",nom);
+    console.log("prenom : ",prenom);
+    console.log("email : ",email);
+    console.log("ismasculin : ",ismasculin);
+    console.log("filiere : ",filiere);
+    console.log("mention : ",mention);
+    console.log("etudes : ",etudes);
     return (
         <div>
                       {isconnect==="true" ? 

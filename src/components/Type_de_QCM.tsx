@@ -1,11 +1,3 @@
-// @ts-ignore
-import { useEffect, useState } from "react";
-// @ts-ignore
-import { useCallback } from "react";
-// @ts-ignore
-import { Link } from "react-router-dom";
-// @ts-ignore
-import { useNavigate } from "react-router-dom";
 
 import info from "../img/informatique.jpg";
 import meca from "../img/mecanique.jpg";

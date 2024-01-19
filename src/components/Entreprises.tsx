@@ -4,12 +4,6 @@ import fluides from "../img/mecanique_des_fluides.jpg";
 import thermo from "../img/thermodynamique.jpeg";
 import plasmas from "../img/physique_des_plasmas.jpg";
 import electronique from "../img/electronique.jpg";
-// @ts-ignore
-import cup_info from "../img/coupe_or.jpg";
-// @ts-ignore
-import cup_meca from "../img/coupe_bronze.jpg";
-// @ts-ignore
-import cup_fluides from "../img/coupe_argent.jpg";
 
 const Entreprises = () => {
     const isconnect = localStorage.getItem("isconnected");
