@@ -14,6 +14,8 @@ const Inscription = () => {
     const [etudes, setEtudes]=useState("");
     const [mdp, setMdp]=useState("");
     const [mdp2, setMdp2]=useState("");
+    const [emailUtilise,setEmailUtilise]=useState(false);
+    const [infoFilled,setInfoFilled]=useState(true);
     const navigate = useNavigate();
     const handleChangeNom = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
         console.log('new value', e.target.value)
@@ -55,7 +57,7 @@ const Inscription = () => {
     }, []);
     const handleClick = useCallback(async() => {
         // Lancez une requête POST vers l'API avec les données de connexion
-        if(mdp===mdp2) {
+        if(mdp===mdp2&&nom!==""&&prenom!==""&&email!==""&&(m===true||f===true)&&mdp!=="") {
         const response = await fetch('http://localhost:8887/api/auth/local/register', {
             method: 'POST',
             headers: {
@@ -100,13 +102,22 @@ const Inscription = () => {
             console.log("vous allez etre redirigé vers home");
             navigate("/home");
           }
+          else {
+            setEmailUtilise(true);
+            console.log("email utilisé ",emailUtilise)
+            //navigate("/inscription");
+          }
+        }
+        else {
+            setInfoFilled(false);
         }
         // Si la connexion est réussie,  stockez le token dans le localStorage
         // Et redirigez l'utilisateur vers la page d'accueil
 
         // Si la connexion est échouée, affichez un message d'erreur
         
-    }, [nom,prenom,email,m,filiere,mention,etudes,mdp,mdp2,navigate]);
+    }, [nom,prenom,email,m,filiere,mention,etudes,mdp,mdp2,emailUtilise,infoFilled]);
+    console.log("email utilisé ",emailUtilise)
     return (
         <div>
                       {isconnect==="true" ? 
@@ -164,13 +175,20 @@ const Inscription = () => {
                     <button className="add_studies">Ajouter des études</button>
                     <div className="placeholder">
                         <p>Mot de passe* : </p>
-                        <input onChange={handleChangeMdp} type="text" className="ph"></input>
+                        <input onChange={handleChangeMdp} type="password" className="ph"></input>
                     </div>
                     <div className="placeholder size">
                         <p className="repeat_password">Répéter mot de passe* : </p>
-                        <input onChange={handleChangeMdp2} type="text" className="ph"></input>
+                        <input onChange={handleChangeMdp2} type="password" className="ph"></input>
                     </div>
-                    <p className="info">Veuillez renseigner les champs avec une astérique</p>
+                    {emailUtilise ?
+                        <p className="info">L'email est déjà utilisé</p> :
+                        <p></p>
+                    }
+                    {infoFilled ?
+                        <p></p> :
+                        <p className="info">Veuillez renseigner les champs avec une astérique</p>
+                    }
                 </div>
             </div>
             <div className="bot_buttons_inscription">
