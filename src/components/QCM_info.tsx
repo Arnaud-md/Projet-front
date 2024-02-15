@@ -18,16 +18,18 @@ const QCM_info = () => {
     const[choicec,setChoicec]=useState(false);
     const[choiced,setChoiced]=useState(false);
     const[tabrand,setTabrand]=useState([] as number[]);
+    const[rand,setRand]=useState(0);
     const[score,setScore]=useState(0);
     const[numPage,setNumPage]=useState(1);
     const isconnect = localStorage.getItem("isconnected");
     const navigate = useNavigate();
-    let rand = Math.floor(Math.random()*30+1);
-    let trouve=true;
+    useEffect(()=> {
+        let rand2 = Math.floor(Math.random()*30+1);
+        let trouve=true;
         for(let i=0;i<tabrand.length;i++) {
-            if(rand===tabrand[i]) {
+            if(rand2===tabrand[i]) {
                 trouve=true;
-                rand = Math.floor(Math.random()*30+1);
+                rand2 = Math.floor(Math.random()*30+1);
                 i=0;
             }
             else {
@@ -38,9 +40,11 @@ const QCM_info = () => {
             // }
         }
         console.log('trouve',trouve);
+        // setRand(rand2);
+    },[tabrand])
     // console.log("random : ",rd);
-     const randomnumber = Math.floor(Math.random()*4+1);
-     console.log("randomnumber : ",randomnumber);
+    //  const randomnumber = Math.floor(Math.random()*4+1);
+    //  console.log("randomnumber : ",randomnumber);
 // 1337
     useEffect(()=> {
         const qcm = async()=> {
@@ -64,7 +68,7 @@ const QCM_info = () => {
         if(numPage===11) {
             navigate(("/results/"));
         }
-    }, [tabrand,numPage,rand,navigate]);
+    }, [tabrand,numPage,rand]);
 
     const handleClickRandom = useCallback(async()=> {
         setTabrand([...tabrand,rand]);
