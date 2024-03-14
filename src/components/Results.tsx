@@ -8,28 +8,21 @@ import.meta.env.VITE_PORT;
 const port = import.meta.env.VITE_PORT ? parseInt(import.meta.env.VITE_PORT as string) : 1337
 const Results = () => {
     const isconnect = localStorage.getItem("isconnected");
- 
-    //const [idResult,setIdResult] = useState(0);
-    const [score,setScore] = useState(0);
+    const quizzId = localStorage.getItem("QuizzId");
+    const [score,setScore] = useState(-1);
     const [subject,setSubject] = useState("");
     useEffect(()=> {
-        const resultat = async()=> {
-            const response = await fetch('http://localhost:'+port+'/api/results', {
-            }) 
+        const scoreFunction = async()=> {
+            const response = await fetch(('http://localhost:'+port+'/api/quizz/'+quizzId+'/result'), {
+            })
             const data = await response.json();
-            // data.length-1;
-            const highest = data[data.length-1]
-//            const id = highest.id;
-            // const highest = data[Object.keys(data).sort().pop()];
-            //const highest = Object.keys(data).sort().pop();
-            console.log("highest : ",highest);
-            //setIdResult(id);
-            setScore(highest.score);
-            setSubject(highest.subject);
-            console.log("rtte", data);
+            console.log("data : ",data);
+            setScore(data.score);
+            setSubject(data.subject);
         }
-        resultat();
-    }, []);
+        scoreFunction();
+    },[])
+    console.log("score : ",score);
     return (
         <div>
                       {isconnect==="true" ? 
