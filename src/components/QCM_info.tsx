@@ -22,7 +22,7 @@ const QCM_info = () => {
     // const[score,setScore]=useState(0);
     // const[numPage,setNumPage]=useState(1);
     const [numPage, setNumPage]=useState(1);
-    const [choiceCheckbox, setChoiceCheckbox]=useState([] as boolean[]);
+    const [choiceCheckbox, setChoiceCheckbox]=useState(0);
     const [reponse, setReponse]=useState([] as String[]);
     //const [choixReponse, setChoixReponse]=useState("");
     const [quizzId,setQuizzId]=useState(0);
@@ -30,34 +30,22 @@ const QCM_info = () => {
     const isconnect = localStorage.getItem("isconnected");
     const navigate = useNavigate();
     useEffect(()=> {
-        let randomNumbers:number[];
-        let firstRand = Math.floor(Math.random()*30+1);
-        randomNumbers = [firstRand];
-        for(let i=1;i<10;i++) {
-            let rand = Math.floor(Math.random()*30+1);
-            while (randomNumbers.includes(rand)) {
-                rand = Math.floor(Math.random()*30+1);
-            }
-            randomNumbers.push(rand);
-        }
+        // let randomNumbers:number[];
+        // let firstRand = Math.floor(Math.random()*30+1);
+        // randomNumbers = [firstRand];
+        // for(let i=1;i<10;i++) {
+        //     let rand = Math.floor(Math.random()*30+1);
+        //     while (randomNumbers.includes(rand)) {
+        //         rand = Math.floor(Math.random()*30+1);
+        //     }
+        //     randomNumbers.push(rand);
+        // }
         const quizzCreation = async()=> {
-            const response = await fetch(('http://localhost:'+port+'/api/quizz'), {
+            const response = await fetch(('http://localhost:'+port+'/api/quizz/informatique'), {
                 headers: new Headers({
                     "Content-Type": "application/json",
                   }),
                   method: "POST",
-                  body: JSON.stringify({
-                    idq1: randomNumbers[0],
-                    idq2: randomNumbers[1],
-                    idq3: randomNumbers[2],
-                    idq4: randomNumbers[3],
-                    idq5: randomNumbers[4],
-                    idq6: randomNumbers[5],
-                    idq7: randomNumbers[6],
-                    idq8: randomNumbers[7],
-                    idq9: randomNumbers[8],
-                    idq10: randomNumbers[9]
-                  }),
             })
             console.log(response)
             const data = await response.json()
@@ -68,7 +56,7 @@ const QCM_info = () => {
           quizzCreation();
           
     },[])
-    console.log("quizzId : ",quizzId);
+    //console.log("quizzId : ",quizzId);
     // useEffect(()=> {
     //     let rand2 = Math.floor(Math.random()*30+1);
     //     let trouve=true;
@@ -94,62 +82,70 @@ const QCM_info = () => {
 // 1337
     useEffect(()=> {
         //if(numPage!==10) {
-            const qcm = async()=> {
-                const resp = await fetch(('http://localhost:'+port+'/api/quizz/'+quizzId), {
-                })
-                const dataQuizz = await resp.json();
-            
-                let index = numPage;
-                let idquestion = "idq"+index;
-                let questionId = dataQuizz[idquestion];
-                const response = await fetch(('http://localhost:'+port+'/api/qcm/informatique/'+questionId), {
-                })
-                const data = await response.json();
-                console.log("DATA : ", data)
-                setQuestion(data.question);
-                setReponse([data.reponseA,data.reponseB,data.reponseC,data.reponseD]);
-                setChoiceCheckbox([false,false,false,false]);
-                //setNumPage(numPage+1);
+            if(quizzId!==0) {
+                const qcm = async()=> {
+                    const resp = await fetch(('http://localhost:'+port+'/api/quizz/'+quizzId+'/question'), {
+                    })
+                    const dataQuizz = await resp.json();
+                    console.log("quizzId : ", quizzId);
+                    console.log("dataQuizz : ",dataQuizz);
+                    
+                    setQuestion(dataQuizz.question);
+                    setReponse([dataQuizz.reponseA,dataQuizz.reponseB,dataQuizz.reponseC,dataQuizz.reponseD]);
+                    setChoiceCheckbox(0);
+
+                    //setNumPage(numPage+1);
+                }
+                qcm();
             }
-            qcm();
         //}
     }, [numPage, quizzId]);
 
     const handleChangeA = useCallback(() => {
-        setChoiceCheckbox([!choiceCheckbox[0],choiceCheckbox[1],choiceCheckbox[2],choiceCheckbox[3]]);
+        if(choiceCheckbox!==1) {
+            setChoiceCheckbox(1);
+        }
+        else {
+            setChoiceCheckbox(0);
+        }
     }, [choiceCheckbox]);
     const handleChangeB = useCallback(() => {
-        setChoiceCheckbox([choiceCheckbox[0],!choiceCheckbox[1],choiceCheckbox[2],choiceCheckbox[3]]);
+        if(choiceCheckbox!==2) {
+            setChoiceCheckbox(2);
+        }
+        else {
+            setChoiceCheckbox(0);
+        }
     }, [choiceCheckbox]);
     const handleChangeC = useCallback(() => {
-        setChoiceCheckbox([choiceCheckbox[0],choiceCheckbox[1],!choiceCheckbox[2],choiceCheckbox[3]]);
+        if(choiceCheckbox!==3) {
+            setChoiceCheckbox(3);
+        }
+        else {
+            setChoiceCheckbox(0);
+        }
     }, [choiceCheckbox]);
     const handleChangeD = useCallback(() => {
-        setChoiceCheckbox([choiceCheckbox[0],choiceCheckbox[1],choiceCheckbox[2],!choiceCheckbox[3]]);
+        if(choiceCheckbox!==4) {
+            setChoiceCheckbox(4);
+        }
+        else {
+            setChoiceCheckbox(0);
+        }
     }, [choiceCheckbox]);
 
     const handleClickSubmit = useCallback(async()=> {
         //setTabrand([...tabrand,rand]);
         
         //if(numPage!==9)
-        const resp = await fetch(('http://localhost:'+port+'/api/quizz/'+quizzId), {
-        })
-        const dataQuizz = await resp.json();
-        let index = numPage;
-        let idquestion = "idq"+index;
-        let questionId = dataQuizz[idquestion];
-        const response = await fetch('http://localhost'+port+'/api/reponse', {
+        const response = await fetch('http://localhost'+port+'/api/quizz/'+quizzId+'/reponse/'+choiceCheckbox, {
             headers: new Headers({
                 "Content-Type": "application/json",
             }),
             method: "POST",
-            body: JSON.stringify({
-                user_id: "",
-                quizz_id: quizzId,
-                question_id: questionId,
-                reponse_donnee: choiceCheckbox
-            }),
         })
+        const newResponse = await response.json();
+
         if(numPage===9) {
             navigate("/results");
         }
@@ -208,19 +204,27 @@ const QCM_info = () => {
                         
                         <p className="question">{question}</p>
                         <div className="response">
-                        <input onClick={handleChangeA} checked={choiceCheckbox[0]} type="checkbox" className="radio_quiz"></input>
+                        {choiceCheckbox===1?
+                        <input onClick={handleChangeA} checked={true} type="checkbox" className="radio_quiz"></input>:
+                        <input onClick={handleChangeA} checked={false} type="checkbox" className="radio_quiz"></input>}
                         <span className="wrap"><p>{reponse[0]}</p></span>
                         </div>
                         <div className="response">
-                        <input onClick={handleChangeB} checked={choiceCheckbox[1]} type="checkbox" className="radio_quiz"></input>
+                        {choiceCheckbox===2?
+                        <input onClick={handleChangeB} checked={true} type="checkbox" className="radio_quiz"></input>:
+                        <input onClick={handleChangeB} checked={false} type="checkbox" className="radio_quiz"></input>}
                         <span className="wrap"><p>{reponse[1]}</p></span>
                         </div>
                         <div className="response">
-                        <input onClick={handleChangeC} checked={choiceCheckbox[2]} type="checkbox" className="radio_quiz"></input>
+                        {choiceCheckbox===3?
+                        <input onClick={handleChangeC} checked={true} type="checkbox" className="radio_quiz"></input>:
+                        <input onClick={handleChangeC} checked={false} type="checkbox" className="radio_quiz"></input>}
                         <span className="wrap"><p>{reponse[2]}</p></span>
                         </div>
                         <div className="response">
-                        <input onClick={handleChangeD} checked={choiceCheckbox[3]} type="checkbox" className="radio_quiz"></input>
+                        {choiceCheckbox===4?
+                        <input onClick={handleChangeD} checked={true} type="checkbox" className="radio_quiz"></input>:
+                        <input onClick={handleChangeD} checked={false} type="checkbox" className="radio_quiz"></input>}
                         <span className="wrap"><p>{reponse[3]}</p></span>
                         </div>
                     </div>
