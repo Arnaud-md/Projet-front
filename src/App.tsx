@@ -28,6 +28,11 @@ import Entreprises_elec1 from './components/Entreprises_elec1';
 import Entreprises_elec2 from './components/Entreprises_elec2';
 import Entreprises_elec3 from './components/Entreprises_elec3';
 import QCM_info from './components/QCM_info';
+import QCM_meca from './components/QCM_meca';
+import QCM_meca_fluides from './components/QCM_meca_fluides';
+import QCM_thermodynamique from './components/QCM_thermodynamique';
+import QCM_physique_plasmas from './components/QCM_physique_plasmas';
+import QCM_electronique from './components/QCM_electronique';
 
 function App() {
 
@@ -135,6 +140,26 @@ function App() {
     {
       path: "/qcm_informatique",
       element: <QCM_info />,
+    },
+    {
+      path: "/qcm_mecanique",
+      element: <QCM_meca />,
+    },
+    {
+      path: "/qcm_mecanique-des-fluides",
+      element: <QCM_meca_fluides />,
+    },
+    {
+      path: "/qcm_thermodynamique",
+      element: <QCM_thermodynamique />,
+    },
+    {
+      path: "/qcm_physique-des-plasmas",
+      element: <QCM_physique_plasmas />,
+    },
+    {
+      path: "/qcm_electronique",
+      element: <QCM_electronique />,
     }
   ]);
   return (

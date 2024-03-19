@@ -44,35 +44,45 @@ const Type_de_QCM = () => {
                             <img src={meca} className="img_meca"></img>
                             <img src={cup_meca} className="img_cup_meca"></img>
                         </div>
-                        <button className="button_green_qcm">Mécanique</button>
+                        <form action='http://localhost:5173/qcm_mecanique'>
+                        <button type="submit" className="button_green_qcm">Mécanique</button>
+                        </form>
                     </div>
                     <div className="three_components">
                         <div className="imgs_fluides">
                             <img src={fluides} className="img_fluides"></img>
                             <img src={cup_fluides} className="img_cup_fluides"></img>
                         </div>
-                        <button className="button_green_qcm">Mécanique des fluides</button>
+                        <form action='http://localhost:5173/qcm_mecanique-des-fluides'>
+                        <button type="submit" className="button_green_qcm">Mécanique des fluides</button>
+                        </form>
                     </div>
                     <div className="three_components">
                         <div className="imgs_thermo">
                             <img src={thermo} className="img_thermo"></img>
                             {/* <img src={cup_thermo} className="img_cup_thermo"></img> */}
                         </div>
-                        <button className="button_green_qcm">Thermo-dynamique</button>
+                        <form action='http://localhost:5173/qcm_thermodynamique'>
+                        <button type="submit" className="button_green_qcm">Thermo-dynamique</button>
+                        </form>
                     </div>
                     <div className="three_components">
                         <div className="imgs_plasmas">
                             <img src={plasmas} className="img_plasmas"></img>
                             {/* <img src={cup_plasmas} className="img_cup_plasmas"></img> */}
                         </div>
-                        <button className="button_green_qcm">Physique des plasmas</button>
+                        <form action='http://localhost:5173/qcm_physique-des-plasmas'>
+                        <button type="submit" className="button_green_qcm">Physique des plasmas</button>
+                        </form>
                     </div>
                     <div className="three_components">
                         <div className="imgs_electronique">
                             <img src={electronique} className="img_electronique"></img>
                             {/* <img src={cup_electronique} className="img_cup_electronique"></img> */}
                         </div>
-                        <button className="button_green_qcm">Electronique</button>
+                        <form action='http://localhost:5173/qcm_electronique'>
+                        <button type="submit" className="button_green_qcm">Electronique</button>
+                        </form>
                     </div>
                 </div>
 

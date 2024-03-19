@@ -14,9 +14,18 @@ const Send_email = () => {
     const [mention,setMention] = useState("");
     const [etudes,setEtudes] = useState("");
 
+    const token = localStorage.getItem("token")?.toString() as string | "";
+    console.log(token)
     useEffect(()=> {
         const user = async()=> {
+
+            const myHeaders = new Headers();
+            myHeaders.append('Content-Type', 'application/json'); 
+            myHeaders.append('Authorization', "Bearer "+token); 
             const response = await fetch(('http://localhost:'+port+'/api/users/me'), {
+                //method: 'GET',
+                //mode: 'no-cors',
+                headers: myHeaders
             })
             const data = await response.json();
             setNom(data.nom);
@@ -36,6 +45,11 @@ const Send_email = () => {
     console.log("filiere : ",filiere);
     console.log("mention : ",mention);
     console.log("etudes : ",etudes);
+    const r1=Math.floor(Math.random()*4+1);
+    const r2=Math.floor(Math.random()*4+1);
+    const r3=Math.floor(Math.random()*4+1);
+    const r4=Math.floor(Math.random()*4+1);
+    const r5=Math.floor(Math.random()*4+1);
     return (
         <div>
                       {isconnect==="true" ? 
@@ -54,12 +68,15 @@ const Send_email = () => {
                 </div>
                 <div className="strait_purple margin_bottom"></div>
                 <div className="result">
-                    <p className="result_size margin_size">Votre CV a été envoyé à l'adresse {} Ward@gmail.com</p>
+                    <p className="result_size margin_size">Votre CV a été envoyé à l'adresse {email} Ward@gmail.com</p>
+                    <p>{r1} {r2} {r3} {r4} {r5}</p>
                     <p className="result_size margin_bottom_size">Vous pouvez aussi le télécharger depuis l'accueil</p>
                 </div>
             </div>
             <div className="bot_buttons_inscription">
+            <form action="http://localhost:5173/home">
                 <button className={"button_purple bord_right"}>Accueil</button>
+            </form>
             </div>
         </div> 
     );
