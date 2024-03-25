@@ -193,6 +193,16 @@ h1 {
   width:110px;
   height:80px;
 }
+.cv_center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.cv_center_div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 .button_purple_big {
   background-color: #FFE30F;
   color: black;
@@ -326,10 +336,13 @@ h1 {
 }
 .title_CV {
   font-size: xx-large;
+  font-weight: bold;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-bottom: 5%;
+}
+.margin_title_bottom {
+  margin-bottom: 10%;
 }
 .description_bac {
   font-size:x-large;
@@ -337,7 +350,6 @@ h1 {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 2%;
 }
 .description_email {
   font-size:x-large;
@@ -345,7 +357,7 @@ h1 {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 2%;
+  margin-bottom: 0%;
 }
 .description_etudes {
   font-size:x-large;
@@ -353,7 +365,7 @@ h1 {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 2%;
+  margin-bottom: 0%;
 }
 .description_score {
   font-size:x-large;
@@ -361,7 +373,18 @@ h1 {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 2%;
+  margin-bottom: 0%;
+}
+.margin_cv_bottom {
+  margin-bottom: 5%;
+}
+.bold {
+  font-size:x-large;
+  font-weight:bold;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .img_cup_cv_div {
   display: flex;
@@ -370,7 +393,7 @@ h1 {
   justify-content: center;
 }
 .img_cup_cv {
-  width:300px;
+  width:200px;
 }
 .description_rang {
   font-size:x-large;

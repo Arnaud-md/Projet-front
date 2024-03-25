@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import cup_or from "../img/coupe_or.jpg";
 import cup_argent from "../img/coupe_argent.jpg";
 import cup_bronze from "../img/coupe_bronze.jpg";
+import { objDisplay } from "vitest/utils.js";
 
 const CV = () => {
     const [nom,setNom] = useState("");
@@ -55,19 +56,28 @@ const CV = () => {
         scoreFunction();
     },[])
 
+    const handleClick=useCallback(()=>{
+        window.print();
+    },[])
+
     return (
         <div>
-            <div className="title_CV">CV de compétences en {subject}</div>
+            <div className="title_CV">CV de compétences en</div>
+            <div className="title_CV margin_title_bottom"> {subject}</div>
             {ismasculin?
-                <div className="description_bac">Monsieur {prenom} {nom} a un baccalauréat dont la filière est : {filiere} avec la mention : {mention}</div>:
-                <div className="description_bac">Madame {prenom} {nom} a un baccalauréat dont la filière est : {filiere} avec la mention : {mention}</div>
+                <div className="description_bac">Monsieur {prenom} {nom} a un baccalauréat</div>:
+                <div className="description_bac">Madame {prenom} {nom} a un baccalauréat</div>
             }
-            <div className="description_email">Son email est : {email}</div>
-            <div className="description_etudes">La decription de ses études est : {etudes}</div>
+            <div className="description_bac">dont la filière est :</div>
+            <div className="bold"> {filiere}</div><div className="description_bac"> avec la mention :</div><div className="bold margin_cv_bottom"> {mention}</div>
+            <div className="description_email margin_cv_bottom">Son email est : {email}</div>
+            <div className="description_etudes">La description de ses études est :</div><div className="bold margin_cv_bottom"> {etudes}</div>
             {ismasculin?
-                <div className="description_score">Monsieur {prenom} {nom} a obtenu la note de {score}/10 au questionnaire de {subject}</div>:
-                <div className="description_score">Madame {prenom} {nom} a obtenu la note de {score}/10 au questionnaire de {subject}</div>
+                <p className="description_score">Monsieur {prenom} {nom} a obtenu</p>:
+                <p className="description_score">Madame {prenom} {nom} a obtenu</p>
             }
+            <p className="description_score"> la note de</p>
+            <p className="bold">{score}/10</p><p className="description_score margin_cv_bottom"> au questionnaire de {subject}</p>
             {score===10||score===9?
                 <div className="img_cup_cv_div"><img src={cup_or} className="img_cup_cv"></img></div>:
                 score===8||score===7?
@@ -84,6 +94,12 @@ const CV = () => {
                         <div className="description_rang">Rang Bronze</div>:
                         <div></div>
             }
+            <div className="bot_buttons">
+            <form action="http://localhost:5173/home">
+                <button className={"button_purple bord_right"}>Accueil</button>
+            </form>
+                <div className="cv_center_div"><button className={"button_purple"} onClick={handleClick}>Print</button></div>
+            </div>
         </div> 
 );
 

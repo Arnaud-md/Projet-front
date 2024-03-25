@@ -59,21 +59,29 @@ const Send_email = () => {
                 }
             <div className="display_column">
                 <div className="title">
-                <h1>Envoi du CV par mail</h1>
+                <h1>Téléchargement ou impression du CV</h1>
                 </div>
                 <div className="strait_purple margin_bottom"></div>
                 <div className="result">
                     {email!==""?
-                    <p className="result_size margin_size">Votre CV a été envoyé à l'adresse {email} Ward@gmail.com</p>:
-                    <p className="result_size margin_size">Votre CV a été envoyé à l'adresse email@gmail.com</p>
+                        <p className="result_size margin_size">Vous êtes connecté avec l'email suivant : {email}</p>:
+                        <p className="result_size margin_size">Vous n'êtes pas connecté ou votre session a expirée</p>
                     }
-                    <p className="result_size margin_bottom_size">Vous pouvez aussi le télécharger depuis l'accueil</p>
+                    {email!==""?
+                        <p className="result_size margin_bottom_size">En cliquant sur suivant vous pouvez télécharger ou imprimer un CV de compétences</p>:
+                        <p className="result_size margin_bottom_size">En cliquant sur suivant vous serez dirigé vers la page d'accueil</p>
+                    }
                 </div>
             </div>
             <div className="bot_buttons_inscription">
-            <form action="http://localhost:5173/CV">
-                <button className={"button_purple bord_right"}>Accueil</button>
-            </form>
+            {email!==""?
+                <form action="http://localhost:5173/CV">
+                    <button className={"button_purple bord_right"}>Suivant</button>
+                </form>:
+                <form action="http://localhost:5173/home">
+                <button className={"button_purple bord_right"}>Suivant</button>
+                </form>
+            }
             </div>
         </div> 
     );
