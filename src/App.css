@@ -312,6 +312,73 @@ h1 {
 .bord_left {
   margin-left: 20px;
 }
+.question_box {
+  border:1px solid #A14DA7;
+  margin-bottom:10px;
+}
+.reponse_box {
+  border:1px solid red;
+  margin-bottom:10px;
+}
+.bonne_reponse {
+  border:1px solid #3FDD23;
+  margin-bottom:50px;
+}
+.title_CV {
+  font-size: xx-large;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 5%;
+}
+.description_bac {
+  font-size:x-large;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 2%;
+}
+.description_email {
+  font-size:x-large;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 2%;
+}
+.description_etudes {
+  font-size:x-large;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 2%;
+}
+.description_score {
+  font-size:x-large;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 2%;
+}
+.img_cup_cv_div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.img_cup_cv {
+  width:300px;
+}
+.description_rang {
+  font-size:x-large;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 #root {
   max-width: 1280px;
   margin: 0 auto;

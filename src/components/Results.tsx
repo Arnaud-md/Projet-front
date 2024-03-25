@@ -81,26 +81,76 @@ const Results = () => {
                     <p className="result_size">Rang Bronze</p>:
                     <div></div>
                     }
-                    {question[0]!==""?
-                    <div>{question[0]}</div>:<div></div>}
-                    {question[1]!==""?
-                    <div>{question[1]}</div>:<div></div>}
-                    {question[2]!==""?
-                    <div>{question[2]}</div>:<div></div>}
-                    {question[3]!==""?
-                    <div>{question[3]}</div>:<div></div>}
-                    {question[4]!==""?
-                    <div>{question[4]}</div>:<div></div>}
-                    {question[5]!==""?
-                    <div>{question[5]}</div>:<div></div>}
-                    {question[6]!==""?
-                    <div>{question[6]}</div>:<div></div>}
-                    {question[7]!==""?
-                    <div>{question[7]}</div>:<div></div>}
-                    {question[8]!==""?
-                    <div>{question[8]}</div>:<div></div>}
-                    {question[9]!==""?
-                    <div>{question[9]}</div>:<div></div>}
+                    {question[0]!==""&&question[0]!==undefined&&question[0]!==null?
+                    <div className="question_box">La réponse à la question : {question[0]}</div>:<div></div>}
+                    {reponse_donnee[0]!==undefined?
+                    <div className="reponse_box">La réponse donnée est : {reponse_donnee[0]}</div>:<div></div>}
+                    {bonne_reponse[0]!==undefined?
+                    <div className="bonne_reponse">La bonne réponse est : {bonne_reponse[0]}</div>:<div></div>}
+                    {question[1]!==""&&question[1]!==undefined&&question[1]!==null?
+                    <div className="question_box">La réponse à la question : {question[1]}</div>:<div></div>}
+                    {reponse_donnee[1]!==undefined?
+                    <div className="reponse_box">La réponse donnée est : {reponse_donnee[1]}</div>:<div></div>}
+                    {bonne_reponse[1]!==undefined?
+                    <div className="bonne_reponse">La bonne réponse est : {bonne_reponse[1]}</div>:<div></div>}
+                    {question[2]!==""&&question[2]!==undefined&&question[2]!==null?
+                    <div className="question_box">La réponse à la question : {question[2]}</div>:<div></div>}
+                    {reponse_donnee[2]!==undefined?
+                    <div className="reponse_box">La réponse donnée est : {reponse_donnee[2]}</div>:<div></div>}
+                    {bonne_reponse[2]!==undefined?
+                    <div className="bonne_reponse">La bonne réponse est : {bonne_reponse[2]}</div>:<div></div>}
+                    {question[3]!==""&&question[3]!==undefined&&question[3]!==null?
+                    <div className="question_box">La réponse à la question : {question[3]}</div>:<div></div>}
+                    {reponse_donnee[3]!==undefined?
+                    <div className="reponse_box">La réponse donnée est : {reponse_donnee[3]}</div>:<div></div>}
+                    {bonne_reponse[3]!==undefined?
+                    <div className="bonne_reponse">La bonne réponse est : {bonne_reponse[3]}</div>:<div></div>}
+                    {question[4]!==""&&question[4]!==undefined&&question[4]!==null?
+                    <div className="question_box">La réponse à la question : {question[4]}</div>:<div></div>}
+                    {reponse_donnee[4]!==undefined?
+                    <div className="reponse_box">La réponse donnée est : {reponse_donnee[4]}</div>:<div></div>}
+                    {bonne_reponse[4]!==undefined?
+                    <div className="bonne_reponse">La bonne réponse est : {bonne_reponse[4]}</div>:<div></div>}
+                    {question[5]!==""&&question[5]!==undefined&&question[5]!==null?
+                    <div className="question_box">La réponse à la question : {question[5]}</div>:<div></div>}
+                    {reponse_donnee[5]!==undefined?
+                    <div className="reponse_box">La réponse donnée est : {reponse_donnee[5]}</div>:<div></div>}
+                    {bonne_reponse[5]!==undefined?
+                    <div className="bonne_reponse">La bonne réponse est : {bonne_reponse[5]}</div>:<div></div>}
+                    {question[6]!==""&&question[6]!==undefined&&question[6]!==null?
+                    <div className="question_box">La réponse à la question : {question[6]}</div>:<div></div>}
+                    {reponse_donnee[6]!==undefined?
+                    <div className="reponse_box">La réponse donnée est : {reponse_donnee[6]}</div>:<div></div>}
+                    {bonne_reponse[6]!==undefined?
+                    <div className="bonne_reponse">La bonne réponse est : {bonne_reponse[6]}</div>:<div></div>}
+                    {question[7]!==""&&question[7]!==undefined&&question[7]!==null?
+                    <div className="question_box">La réponse à la question : {question[7]}</div>:<div></div>}
+                    {reponse_donnee[7]!==undefined?
+                    <div className="reponse_box">La réponse donnée est : {reponse_donnee[7]}</div>:<div></div>}
+                    {bonne_reponse[7]!==undefined?
+                    <div className="bonne_reponse">La bonne réponse est : {bonne_reponse[7]}</div>:<div></div>}
+                    {question[8]!==""&&question[8]!==undefined&&question[8]!==null?
+                    <div className="question_box">La réponse à la question : {question[8]}</div>:<div></div>}
+                    {reponse_donnee[8]!==undefined?
+                    <div className="reponse_box">La réponse donnée est : {reponse_donnee[8]}</div>:<div></div>}
+                    {bonne_reponse[8]!==undefined?
+                    <div className="bonne_reponse">La bonne réponse est : {bonne_reponse[8]}</div>:<div></div>}
+                    {question[9]!==""&&question[9]!==undefined&&question[9]!==null?
+                    <div className="question_box">La réponse à la question : {question[9]}</div>:<div></div>}
+                    {reponse_donnee[9]!==undefined?
+                    <div className="reponse_box">La réponse donnée est : {reponse_donnee[9]}</div>:<div></div>}
+                    {bonne_reponse[9]!==undefined?
+                    <div className="bonne_reponse">La bonne réponse est : {bonne_reponse[9]}</div>:<div></div>}
+
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                 </div>
             </div>
             <div className="bot_buttons_inscription">

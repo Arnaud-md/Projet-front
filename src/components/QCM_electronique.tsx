@@ -123,7 +123,7 @@ const QCM_electronique = () => {
                 }
                 <div className="display_column">
                     <div className="title">
-                        <h1>QCM de mécanique</h1>
+                        <h1>QCM d'électronique</h1>
                     </div>
                     <div className="strait_purple margin_bottom"></div>
                     <div className="quiz">

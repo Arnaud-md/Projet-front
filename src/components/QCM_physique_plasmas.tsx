@@ -123,7 +123,7 @@ const QCM_physique_plasmas = () => {
                 }
                 <div className="display_column">
                     <div className="title">
-                        <h1>QCM de mécanique</h1>
+                        <h1>QCM de physique des plasmas</h1>
                     </div>
                     <div className="strait_purple margin_bottom"></div>
                     <div className="quiz">

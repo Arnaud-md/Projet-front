@@ -33,6 +33,7 @@ import QCM_meca_fluides from './components/QCM_meca_fluides';
 import QCM_thermodynamique from './components/QCM_thermodynamique';
 import QCM_physique_plasmas from './components/QCM_physique_plasmas';
 import QCM_electronique from './components/QCM_electronique';
+import CV from './components/CV';
 
 function App() {
 
@@ -160,6 +161,10 @@ function App() {
     {
       path: "/qcm_electronique",
       element: <QCM_electronique />,
+    },
+    {
+      path: "/CV",
+      element: <CV />,
     }
   ]);
   return (
