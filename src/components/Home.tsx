@@ -4,6 +4,7 @@ import coupes from "../img/coupes.jpg";
 
 const Home = () => {
 const isconnect = localStorage.getItem("isconnected");
+const QuizzId = localStorage.getItem("QuizzId") as unknown as number;
 const navigate = useNavigate();
 const handleClick = useCallback(()=>{
 localStorage.clear();
@@ -32,9 +33,14 @@ navigate("/");
                     <img src={coupes} className="img_cups"></img>
                 </div>
                 <div className="load_CV">
+                    {isconnect==="true"&&QuizzId>0?
                     <form action="http://localhost:5173/load_cv">
                         <button type='submit' className="button_green">Télécharger un CV</button>
+                    </form>:
+                    <form action="http://localhost:5173/blank">
+                        <button type='submit' className="button_green">Télécharger un CV</button>
                     </form>
+                    }
                 </div>
                 <p className="council">Répondez à un QCM pour télécharger un CV de compétences</p>
                 <div className="strait_green"></div>

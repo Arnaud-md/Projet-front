@@ -9,7 +9,7 @@ import Type_de_QCM from './components/Type_de_QCM';
 import Demande_inscription from './components/Demande_inscription';
 import Inscription from './components/Inscription';
 import Send_email from './components/Send_email';
-import Load_CV from './components/Load_CV';
+import Load_CV from './components/Load_CV_old';
 import Results from './components/Results';
 import Entreprises from './components/Entreprises';
 import Entreprises_informatique1 from './components/Entreprises_informatique1';
@@ -34,6 +34,8 @@ import QCM_thermodynamique from './components/QCM_thermodynamique';
 import QCM_physique_plasmas from './components/QCM_physique_plasmas';
 import QCM_electronique from './components/QCM_electronique';
 import CV from './components/CV';
+import Load_cv from './components/Load_cv';
+import Blank from './components/Blank';
 
 function App() {
 
@@ -68,7 +70,7 @@ function App() {
     },
     {
       path: "/load_CV",
-      element: <Load_CV />,
+      element: <Load_cv />,
     },
     {
       path: "/results",
@@ -165,6 +167,10 @@ function App() {
     {
       path: "/CV",
       element: <CV />,
+    },
+    {
+      path: "/blank",
+      element: <Blank />,
     }
   ]);
   return (

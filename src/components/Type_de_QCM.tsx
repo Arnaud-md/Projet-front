@@ -33,7 +33,7 @@ const Type_de_QCM = () => {
                     <div className="three_components">
                         <div className="imgs_info">
                             <img src={info} className="img_info"></img>
-                            <img src={cup_info} className="img_cup_info"></img>
+                            {/* <img src={cup_info} className="img_cup_info"></img> */}
                          </div>
                          <form action='http://localhost:5173/qcm_informatique'>
                         <button type="submit" className="button_green_qcm">Informatique</button>
@@ -42,7 +42,7 @@ const Type_de_QCM = () => {
                     <div className="three_components">
                         <div className="imgs_meca">
                             <img src={meca} className="img_meca"></img>
-                            <img src={cup_meca} className="img_cup_meca"></img>
+                            {/* <img src={cup_meca} className="img_cup_meca"></img> */}
                         </div>
                         <form action='http://localhost:5173/qcm_mecanique'>
                         <button type="submit" className="button_green_qcm">Mécanique</button>
@@ -51,7 +51,7 @@ const Type_de_QCM = () => {
                     <div className="three_components">
                         <div className="imgs_fluides">
                             <img src={fluides} className="img_fluides"></img>
-                            <img src={cup_fluides} className="img_cup_fluides"></img>
+                            {/* <img src={cup_fluides} className="img_cup_fluides"></img> */}
                         </div>
                         <form action='http://localhost:5173/qcm_mecanique-des-fluides'>
                         <button type="submit" className="button_green_qcm">Mécanique des fluides</button>

@@ -3,7 +3,7 @@ import cup_bronze from "../img/coupe_bronze.jpg";
 import cup_silver from "../img/coupe_argent.jpg";
 import cv from "../img/CV3_image.jpg";
 
-const Load_CV = () => {
+const Load_CV_old = () => {
     const isconnect = localStorage.getItem("isconnected");
     return (
         <div>
@@ -76,4 +76,4 @@ const Load_CV = () => {
     );
 };
 
-export default Load_CV;
+export default Load_CV_old;

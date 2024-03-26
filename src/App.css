@@ -178,6 +178,13 @@ h1 {
   font-size:18px;
   border-radius: 50%;
 }
+.button_green_cv {
+  background-color: #3FDD23;
+  font-size:24px;
+  width:120px;
+  height:80px;
+  border-radius: 50%;
+}
 .council {
   font-size: 24px;
   text-align: center;
@@ -278,13 +285,13 @@ h1 {
   margin-bottom: 20px;
 }
 .img {
-  width:70px;
+  width:200px;
 }
 .img_info {
   width:70px;
 }
 .img_cup_info {
-  width:70px;
+  width:200px;
 }
 .img_meca {
   width:70px;
@@ -315,6 +322,9 @@ h1 {
 }
 .img_cup_electronique {
   width:70px;
+}
+.mg_bottom_cv{
+  margin-bottom: 20%;
 }
 .bord_right {
   margin-right:20px;
@@ -401,6 +411,35 @@ h1 {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+}
+.cv_cup {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.print{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.mg_print {
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+.error_message {
+  font-size: x-large;
+  color:#3FDD23;
+  justify-content: center;
+  margin-bottom: 20%;
+}
+.result_paragraph {
+  font-size: x-large;
+  justify-content: center;
+}
+.result_paragraph_div {
+  justify-content: center;
+  margin-top: 10%;
 }
 #root {
   max-width: 1280px;
