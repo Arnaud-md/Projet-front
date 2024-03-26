@@ -11,23 +11,14 @@ const navigate = useNavigate();
 const isconnect = localStorage.getItem("isconnected");
 
 const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log('new value', e.target.value)
-
             setEmail(e.target.value)
-
-
 }, [])
 
 const handleChange2 = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log('new value', e.target.value)
-
             setMdp(e.target.value)
-   
-
 }, [])
 
 const handleClick = useCallback(async() => {
-    // Lancez une requête POST vers l'API avec les données de connexion
     const response = await fetch('http://localhost:8887/api/auth/local', {
         method: 'POST',
         headers: {
@@ -39,7 +30,6 @@ const handleClick = useCallback(async() => {
         })
       })
       const data = await response.text()
-      console.log("rtte", data)
       if (data!=="le mot de passe n'est pas le bon" && data!=="l'email saisi n'est pas le bon") {
         localStorage.setItem('token', data)
         localStorage.setItem('isconnected',"true")
@@ -47,14 +37,8 @@ const handleClick = useCallback(async() => {
       }
       else {
         setIscorrect(false);
-        console.log("iscorrect false");
         navigate("/connexion")
-      }
-    // Si la connexion est réussie,  stockez le token dans le localStorage
-    // Et redirigez l'utilisateur vers la page d'accueil
-
-    // Si la connexion est échouée, affichez un message d'erreur
-    
+      }   
 }, [email, mdp, navigate])
 
     return (
@@ -93,7 +77,6 @@ const handleClick = useCallback(async() => {
                     <form action="http://localhost:5173/inscription">
                     <button type="submit" className="button_purple inscription_button">Inscription</button>
                     </form>
-                    
                 </div>
             </div>
         </div> 

@@ -52,7 +52,7 @@ const Entreprises_elec2 = () => {
                     <div className="strait_grey"></div>
                 </div>
                 <div className="bot_buttons bot_btn_mtp">
-                <form action="http://localhost:5173">
+                <form action="http://localhost:5173/home">
                     <button type="submit" className="button_purple width_size">Accueil</button>
                 </form>
                 <form action="http://localhost:5173/entreprises_electronique1">

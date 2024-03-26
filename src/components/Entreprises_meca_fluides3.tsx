@@ -41,7 +41,7 @@ const Entreprises_meca_fluides3 = () => {
      
             </div>
             <div className="bot_buttons bot_btn_mtp_fluides3">
-                <form action="http://localhost:5173">
+                <form action="http://localhost:5173/home">
                     <button type="submit" className="button_purple width_size">Accueil</button>
                 </form>
                 <form action="http://localhost:5173/entreprises_mecanique_fluides2">

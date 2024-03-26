@@ -43,13 +43,12 @@ const Entreprises_informatique2 = () => {
                 
             </div>
             <div className="bot_buttons bot_btn_mtp_info2">
-            <form action="http://localhost:5173">
+            <form action="http://localhost:5173/home">
                 <button type="submit" className="button_purple width_size">Accueil</button>
             </form>
             <form action="http://localhost:5173/entreprises_informatique1">
                 <button type="submit" className="button_purple width_size">Page précédente</button>
             </form>
-                {/* <button className="button_purple width_size">Page suivante</button> */}
             </div>
             </div>
             

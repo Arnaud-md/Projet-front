@@ -76,7 +76,7 @@ const Entreprises = () => {
                 </div>
 
             <div className="bot_buttons mtp">
-            <form action="http://localhost:5173">
+            <form action="http://localhost:5173/home">
                 <button type="submit" className={"button_purple bord_right"}>Accueil</button>
             </form> 
             </div>

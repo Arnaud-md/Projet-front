@@ -18,15 +18,12 @@ const Inscription = () => {
     const [infoFilled,setInfoFilled]=useState(true);
     const navigate = useNavigate();
     const handleChangeNom = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-        console.log('new value', e.target.value)
                 setNom(e.target.value);
     }, []);
     const handleChangePrenom = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-        console.log('new value', e.target.value)
                 setPrenom(e.target.value);
     }, []);
     const handleChangeMail = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-        console.log('new value', e.target.value)
                 setEmail(e.target.value);
     }, []);
     const handleChangeMasculin = useCallback(() => {
@@ -36,27 +33,21 @@ const Inscription = () => {
         setF(!f);
     }, [f]);
     const handleChangeFiliere = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-        console.log('new value', e.target.value)
         setFiliere(e.target.value);
     }, []);
     const handleChangeMention = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-        console.log('new value', e.target.value)
         setMention(e.target.value);
     }, []);
     const handleChangeEtudes = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-        console.log('new value', e.target.value)
         setEtudes(e.target.value);
     }, []);
     const handleChangeMdp = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-        console.log('new value', e.target.value)
         setMdp(e.target.value);
     }, []);
     const handleChangeMdp2 = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-        console.log('new value', e.target.value)
         setMdp2(e.target.value);
     }, []);
     const handleClick = useCallback(async() => {
-        // Lancez une requête POST vers l'API avec les données de connexion
         if(mdp===mdp2&&nom!==""&&prenom!==""&&email!==""&&(m===true||f===true)&&mdp!=="") {
         const response = await fetch('http://localhost:8887/api/auth/local/register', {
             method: 'POST',
@@ -75,49 +66,19 @@ const Inscription = () => {
             })
           })
           const data = await response.text()
-          console.log("rtte", data)
           if (data!=="l'email que vous avez saisi est déjà utilisé") {
-            
             localStorage.setItem('token', data);
             localStorage.setItem('isconnected',"true")
-        //     const response2 = await fetch('http://localhost:8887/api/users', {
-        //         method: 'POST',
-        //     headers: {
-        //       'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify({
-        //       nom: nom,
-        //       prenom: prenom,
-        //       email: email,
-        //       ismasculin: m,
-        //       filiere: filiere,
-        //       mention: mention,
-        //       etudes: etudes,
-        //       password: mdp
-        //     })
-        //   })
-        //   const data = await response2.text()
-        //   })
-
-            console.log("vous allez etre redirigé vers home");
             navigate("/home");
           }
           else {
             setEmailUtilise(true);
-            console.log("email utilisé ",emailUtilise)
-            //navigate("/inscription");
           }
         }
         else {
             setInfoFilled(false);
         }
-        // Si la connexion est réussie,  stockez le token dans le localStorage
-        // Et redirigez l'utilisateur vers la page d'accueil
-
-        // Si la connexion est échouée, affichez un message d'erreur
-        
     }, [nom,prenom,email,m,filiere,mention,etudes,mdp,mdp2,emailUtilise,infoFilled]);
-    console.log("email utilisé ",emailUtilise)
     return (
         <div>
                       {isconnect==="true" ? 

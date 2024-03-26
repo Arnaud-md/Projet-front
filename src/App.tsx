@@ -6,10 +6,8 @@ import {
 } from "react-router-dom";
 import Home from './components/Home'
 import Type_de_QCM from './components/Type_de_QCM';
-import Demande_inscription from './components/Demande_inscription';
 import Inscription from './components/Inscription';
 import Send_email from './components/Send_email';
-import Load_CV from './components/Load_CV_old';
 import Results from './components/Results';
 import Entreprises from './components/Entreprises';
 import Entreprises_informatique1 from './components/Entreprises_informatique1';
@@ -55,10 +53,6 @@ function App() {
     {
       path: "/home",
       element: <Home />,
-    },
-    {
-      path: "/demande_inscription",
-      element: <Demande_inscription />,
     },
     {
       path: "/inscription",

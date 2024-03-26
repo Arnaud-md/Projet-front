@@ -20,9 +20,7 @@ const QCM_electronique = () => {
                   }),
                   method: "POST",
             })
-            console.log(response)
             const data = await response.json()
-            console.log(data)
             setQuizzId(data.id);
         }
           quizzCreation();
@@ -34,8 +32,6 @@ const QCM_electronique = () => {
                     const resp = await fetch(('http://localhost:'+port+'/api/quizz/'+quizzId+'/question'), {
                     })
                     const dataQuizz = await resp.json();
-                    console.log("quizzId : ", quizzId);
-                    console.log("dataQuizz : ",dataQuizz);
                     
                     setQuestion(dataQuizz.question);
                     setReponse([dataQuizz.reponseA,dataQuizz.reponseB,dataQuizz.reponseC,dataQuizz.reponseD]);
@@ -106,9 +102,7 @@ const QCM_electronique = () => {
             }
         }
     },[numPage,quizzId,choiceCheckbox]);
-    console.log("numPage : ",numPage);
 
-    
         return (
             <div>
                 {isconnect==="true" ? 

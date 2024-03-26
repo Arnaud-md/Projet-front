@@ -20,9 +20,7 @@ const QCM_info = () => {
                   }),
                   method: "POST",
             })
-            console.log(response)
             const data = await response.json()
-            console.log(data)
             setQuizzId(data.id);
         }
           quizzCreation();
@@ -34,9 +32,6 @@ const QCM_info = () => {
                     const resp = await fetch(('http://localhost:'+port+'/api/quizz/'+quizzId+'/question'), {
                     })
                     const dataQuizz = await resp.json();
-                    console.log("quizzId : ", quizzId);
-                    console.log("dataQuizz : ",dataQuizz);
-                    
                     setQuestion(dataQuizz.question);
                     setReponse([dataQuizz.reponseA,dataQuizz.reponseB,dataQuizz.reponseC,dataQuizz.reponseD]);
                     setChoiceCheckbox(0);
@@ -106,9 +101,7 @@ const QCM_info = () => {
             }
         }
     },[numPage,quizzId,choiceCheckbox]);
-    console.log("numPage : ",numPage);
 
-    
         return (
             <div>
                 {isconnect==="true" ? 

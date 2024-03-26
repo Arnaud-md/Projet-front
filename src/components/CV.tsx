@@ -2,7 +2,6 @@ import { useCallback, useEffect, useState } from "react";
 import cup_or from "../img/coupe_or.jpg";
 import cup_argent from "../img/coupe_argent.jpg";
 import cup_bronze from "../img/coupe_bronze.jpg";
-import { objDisplay } from "vitest/utils.js";
 
 const CV = () => {
     const [nom,setNom] = useState("");
@@ -22,13 +21,10 @@ const CV = () => {
 
     useEffect(()=> {
         const user = async()=> {
-
             const myHeaders = new Headers();
             myHeaders.append('Content-Type', 'application/json'); 
             myHeaders.append('Authorization', "Bearer "+token); 
             const response = await fetch(('http://localhost:'+port+'/api/users/me'), {
-                //method: 'GET',
-                //mode: 'no-cors',
                 headers: myHeaders
             })
             const data = await response.json();
@@ -43,13 +39,11 @@ const CV = () => {
         user();
     },[])
 
-
     useEffect(()=> {
         const scoreFunction = async()=> {
             const response = await fetch(('http://localhost:'+port+'/api/quizz/'+QuizzId+'/result'), {
             })
             const data = await response.json();
-            console.log("data : ",data);
             setScore(data.score);
             setSubject(data.subject);
         }

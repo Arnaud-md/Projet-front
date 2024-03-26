@@ -19,7 +19,6 @@ const Load_cv = () => {
             const response = await fetch(('http://localhost:'+port+'/api/quizz/'+QuizzId+'/result'), {
             })
             const data = await response.json();
-            console.log("data : ",data);
             setScore(data.score);
             setSubject(data.subject);
         }

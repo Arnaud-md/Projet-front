@@ -4,7 +4,6 @@ import cup_argent from "../img/coupe_argent.jpg";
 import cup_bronze from "../img/coupe_bronze.jpg";
 import.meta.env.VITE_PORT;
 
-
 const port = import.meta.env.VITE_PORT ? parseInt(import.meta.env.VITE_PORT as string) : 1337
 const Results = () => {
     const isconnect = localStorage.getItem("isconnected");
@@ -20,7 +19,6 @@ const Results = () => {
             const response = await fetch(('http://localhost:'+port+'/api/quizz/'+quizzId+'/result'), {
             })
             const data = await response.json();
-            console.log("data : ",data);
             setScore(data.score);
             setSubject(data.subject);
         }
@@ -40,10 +38,7 @@ const Results = () => {
         }
         correction();
     },[])
-    console.log("score : ",score);
-    console.log("question : ", question);
-    console.log("reponse_donnee : ", reponse_donnee);
-    console.log("bonne_reponse : ", bonne_reponse);
+
     return (
         <div>
                       {isconnect==="true" ? 
@@ -141,16 +136,6 @@ const Results = () => {
                     <div className="reponse_box">La réponse donnée est : {reponse_donnee[9]}</div>:<div></div>}
                     {bonne_reponse[9]!==undefined?
                     <div className="bonne_reponse">La bonne réponse est : {bonne_reponse[9]}</div>:<div></div>}
-
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                 </div>
             </div>
             <div className="bot_buttons_inscription">

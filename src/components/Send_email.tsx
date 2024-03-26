@@ -15,16 +15,12 @@ const Send_email = () => {
     const [etudes,setEtudes] = useState("");
 
     const token = localStorage.getItem("token")?.toString() as string | "";
-    console.log(token)
     useEffect(()=> {
         const user = async()=> {
-
             const myHeaders = new Headers();
             myHeaders.append('Content-Type', 'application/json'); 
             myHeaders.append('Authorization', "Bearer "+token); 
             const response = await fetch(('http://localhost:'+port+'/api/users/me'), {
-                //method: 'GET',
-                //mode: 'no-cors',
                 headers: myHeaders
             })
             const data = await response.json();
@@ -38,13 +34,7 @@ const Send_email = () => {
         }
         user();
     },[])
-    console.log("nom : ",nom);
-    console.log("prenom : ",prenom);
-    console.log("email : ",email);
-    console.log("ismasculin : ",ismasculin);
-    console.log("filiere : ",filiere);
-    console.log("mention : ",mention);
-    console.log("etudes : ",etudes);
+
     return (
         <div>
                       {isconnect==="true" ? 
