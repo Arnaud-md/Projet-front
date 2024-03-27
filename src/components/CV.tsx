@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import cup_or from "../img/coupe_or.jpg";
 import cup_argent from "../img/coupe_argent.jpg";
 import cup_bronze from "../img/coupe_bronze.jpg";
+import { useNavigate } from "react-router-dom";
 
 const CV = () => {
     const [nom,setNom] = useState("");
@@ -18,6 +19,7 @@ const CV = () => {
     const port = import.meta.env.VITE_PORT ? parseInt(import.meta.env.VITE_PORT as string) : 1337
     const token = localStorage.getItem("token")?.toString() as string | "";
     const QuizzId = localStorage.getItem("QuizzId");
+    const navigate = useNavigate();
 
     useEffect(()=> {
         const user = async()=> {
@@ -27,14 +29,21 @@ const CV = () => {
             const response = await fetch(('http://localhost:'+port+'/api/users/me'), {
                 headers: myHeaders
             })
+            
+            if (response.status===200) {
             const data = await response.json();
-            setNom(data.nom);
-            setPrenom(data.prenom);
-            setEmail(data.email);
-            setIsmasculin(data.ismasculin);
-            setFiliere(data.filiere);
-            setMention(data.mention);
-            setEtudes(data.etudes);
+                setNom(data.nom);
+                setPrenom(data.prenom);
+                setEmail(data.email);
+                setIsmasculin(data.ismasculin);
+            
+                setFiliere(data.filiere);
+                setMention(data.mention);
+                setEtudes(data.etudes);
+            }
+            else {
+                navigate("/blank");
+            }
         }
         user();
     },[])
