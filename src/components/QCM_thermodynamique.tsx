@@ -77,7 +77,7 @@ const QCM_thermodynamique = () => {
     const handleClickSubmit = useCallback(async()=> {
         if(choiceCheckbox!==0) {
             if(numPage!==10) {
-                const response = await fetch('http://localhost:'+port+'/api/quizz/'+quizzId+'/reponse/'+choiceCheckbox, {
+                await fetch('http://localhost:'+port+'/api/quizz/'+quizzId+'/reponse/'+choiceCheckbox, {
                     headers: new Headers({
                         "Content-Type": "application/json",
                     }),
@@ -86,7 +86,7 @@ const QCM_thermodynamique = () => {
             //const newResponse = await response.json();
             }
             if(numPage===10) {
-                const response = await fetch('http://localhost:'+port+'/api/quizz/'+quizzId+'/reponse/'+choiceCheckbox, {
+                await fetch('http://localhost:'+port+'/api/quizz/'+quizzId+'/reponse/'+choiceCheckbox, {
                     headers: new Headers({
                         "Content-Type": "application/json",
                     }),
