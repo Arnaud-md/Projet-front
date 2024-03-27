@@ -83,7 +83,7 @@ const QCM_meca_fluides = () => {
                     }),
                     method: "POST",
                 })
-            const newResponse = await response.json();
+            //const newResponse = await response.json();
             }
             if(numPage===10) {
                 const response = await fetch('http://localhost:'+port+'/api/quizz/'+quizzId+'/reponse/'+choiceCheckbox, {
@@ -92,7 +92,7 @@ const QCM_meca_fluides = () => {
                     }),
                     method: "POST",
                 })
-                const newResponse = await response.json();
+                //const newResponse = await response.json();
                 localStorage.setItem("QuizzId",quizzId.toString());
                 navigate("/results/");
             }

@@ -6,13 +6,13 @@ import.meta.env.VITE_PORT;
 const port = import.meta.env.VITE_PORT ? parseInt(import.meta.env.VITE_PORT as string) : 1337
 const Send_email = () => {
     const isconnect = localStorage.getItem("isconnected");
-    const [nom,setNom] = useState("");
-    const [prenom,setPrenom] = useState("");
+    // const [nom,setNom] = useState("");
+    // const [prenom,setPrenom] = useState("");
     const [email,setEmail] = useState("");
-    const [ismasculin,setIsmasculin] = useState(true);
-    const [filiere,setFiliere] = useState("");
-    const [mention,setMention] = useState("");
-    const [etudes,setEtudes] = useState("");
+    // const [ismasculin,setIsmasculin] = useState(true);
+    // const [filiere,setFiliere] = useState("");
+    // const [mention,setMention] = useState("");
+    // const [etudes,setEtudes] = useState("");
 
     const token = localStorage.getItem("token")?.toString() as string | "";
     useEffect(()=> {
@@ -24,13 +24,13 @@ const Send_email = () => {
                 headers: myHeaders
             })
             const data = await response.json();
-            setNom(data.nom);
-            setPrenom(data.prenom);
+            //setNom(data.nom);
+            //setPrenom(data.prenom);
             setEmail(data.email);
-            setIsmasculin(data.ismasculin);
-            setFiliere(data.filiere);
-            setMention(data.mention);
-            setEtudes(data.etudes);
+            //setIsmasculin(data.ismasculin);
+            //setFiliere(data.filiere);
+            //setMention(data.mention);
+            //setEtudes(data.etudes);
         }
         user();
     },[])
