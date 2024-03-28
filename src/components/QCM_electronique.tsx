@@ -1,9 +1,8 @@
 import { useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import.meta.env.VITE_PORT;
-const port = import.meta.env.VITE_PORT ? parseInt(import.meta.env.VITE_PORT as string) : 1337
 
 const QCM_electronique = () => {
+    const api_url = import.meta.env.VITE_API_URL as string;
     const [question,setQuestion]=useState("");
     const [numPage, setNumPage]=useState(1);
     const [choiceCheckbox, setChoiceCheckbox]=useState(0);
@@ -14,7 +13,7 @@ const QCM_electronique = () => {
     const navigate = useNavigate();
     useEffect(()=> {
         const quizzCreation = async()=> {
-            const response = await fetch(('http://localhost:'+port+'/api/quizz/electronique'), {
+            const response = await fetch((api_url+'/api/quizz/electronique'), {
                 headers: new Headers({
                     "Content-Type": "application/json",
                   }),
@@ -29,7 +28,7 @@ const QCM_electronique = () => {
         if(numPage<=10) {
             if(quizzId!==0&&quizzId) {
                 const qcm = async()=> {
-                    const resp = await fetch(('http://localhost:'+port+'/api/quizz/'+quizzId+'/question'), {
+                    const resp = await fetch((api_url+'/api/quizz/'+quizzId+'/question'), {
                     })
                     const dataQuizz = await resp.json();
                     
@@ -78,7 +77,7 @@ const QCM_electronique = () => {
     const handleClickSubmit = useCallback(async()=> {
         if(choiceCheckbox!==0) {
             if(numPage!==10) {
-                await fetch('http://localhost:'+port+'/api/quizz/'+quizzId+'/reponse/'+choiceCheckbox, {
+                await fetch(api_url+'/api/quizz/'+quizzId+'/reponse/'+choiceCheckbox, {
                     headers: new Headers({
                         "Content-Type": "application/json",
                     }),
@@ -87,7 +86,7 @@ const QCM_electronique = () => {
             //const newResponse = await response.json();
             }
             if(numPage===10) {
-                await fetch('http://localhost:'+port+'/api/quizz/'+quizzId+'/reponse/'+choiceCheckbox, {
+                await fetch(api_url+'/api/quizz/'+quizzId+'/reponse/'+choiceCheckbox, {
                     headers: new Headers({
                         "Content-Type": "application/json",
                     }),

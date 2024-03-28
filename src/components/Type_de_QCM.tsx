@@ -5,9 +5,12 @@ import fluides from "../img/mecanique_des_fluides.jpg";
 import thermo from "../img/thermodynamique.jpeg";
 import plasmas from "../img/physique_des_plasmas.jpg";
 import electronique from "../img/electronique.jpg";
+import { Link } from "react-router-dom";
 
 const Type_de_QCM = () => {
     const isconnect = localStorage.getItem("isconnected");
+    const api_url = import.meta.env.VITE_API_URL as string;
+    console.log("api_url",api_url);
 
     return (
         <div>
@@ -31,59 +34,59 @@ const Type_de_QCM = () => {
                         <div className="imgs_info">
                             <img src={info} className="img_info"></img>
                          </div>
-                         <form action='http://localhost:5173/qcm_informatique'>
+                         <Link to='/qcm_informatique'>
                         <button type="submit" className="button_green_qcm">Informatique</button>
-                        </form>
+                        </Link>
                     </div>
                     <div className="three_components">
                         <div className="imgs_meca">
                             <img src={meca} className="img_meca"></img>
                         </div>
-                        <form action='http://localhost:5173/qcm_mecanique'>
+                        <Link to='/qcm_mecanique'>
                         <button type="submit" className="button_green_qcm">Mécanique</button>
-                        </form>
+                        </Link>
                     </div>
                     <div className="three_components">
                         <div className="imgs_fluides">
                             <img src={fluides} className="img_fluides"></img>
                         </div>
-                        <form action='http://localhost:5173/qcm_mecanique-des-fluides'>
+                        <Link to ='/qcm_mecanique-des-fluides'>
                         <button type="submit" className="button_green_qcm">Mécanique des fluides</button>
-                        </form>
+                        </Link>
                     </div>
                     <div className="three_components">
                         <div className="imgs_thermo">
                             <img src={thermo} className="img_thermo"></img>
                         </div>
-                        <form action='http://localhost:5173/qcm_thermodynamique'>
+                        <Link to='/qcm_thermodynamique'>
                         <button type="submit" className="button_green_qcm">Thermo-dynamique</button>
-                        </form>
+                        </Link>
                     </div>
                     <div className="three_components">
                         <div className="imgs_plasmas">
                             <img src={plasmas} className="img_plasmas"></img>
                         </div>
-                        <form action='http://localhost:5173/qcm_physique-des-plasmas'>
+                        <Link to='/qcm_physique-des-plasmas'>
                         <button type="submit" className="button_green_qcm">Physique des plasmas</button>
-                        </form>
+                        </Link>
                     </div>
                     <div className="three_components">
                         <div className="imgs_electronique">
                             <img src={electronique} className="img_electronique"></img>
                         </div>
-                        <form action='http://localhost:5173/qcm_electronique'>
+                        <Link to='/qcm_electronique'>
                         <button type="submit" className="button_green_qcm">Electronique</button>
-                        </form>
+                        </Link>
                     </div>
                 </div>
 
             <div className="bot_buttons mtp">
-            <form action="http://localhost:5173/home">
-                <button type="submit" className={"button_purple bord_right"}>Accueil</button>
-            </form>
-            <form action="http://localhost:5173/connexion">
+            <Link to="/home">
+                <button type="submit" className="button_purple bord_right">Accueil</button>
+            </Link>
+            <Link to='/connexion'>
                 <button type="submit" className="button_purple bord_left">Connexion</button>
-            </form>
+            </Link>
             </div>
         </div> 
     </div>

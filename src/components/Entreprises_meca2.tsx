@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Entreprises_meca2 = () => {
     const isconnect = localStorage.getItem("isconnected");
     return (
@@ -52,15 +54,15 @@ const Entreprises_meca2 = () => {
                     <div className="strait_grey"></div>
                 </div>
                 <div className="bot_buttons bot_btn_mtp">
-                <form action="http://localhost:5173/home">
+                <Link to="/home">
                     <button type="submit" className="button_purple width_size">Accueil</button>
-                </form>
-                    <form action="http://localhost:5173/entreprises_mecanique1">
+                </Link>
+                <Link to="/entreprises_mecanique1">
                     <button type="submit" className="button_purple width_size">Page précédente</button>
-                </form>
-                    <form action="http://localhost:5173/entreprises_mecanique3">
-                </form>
+                </Link>
+                <Link to="/entreprises_mecanique3">
                     <button type="submit" className="button_purple width_size">Page suivante</button>
+                </Link>
                 </div>
             </div>
             

@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import cup_or from "../img/coupe_or.jpg";
 import cup_argent from "../img/coupe_argent.jpg";
 import cup_bronze from "../img/coupe_bronze.jpg";
-import.meta.env.VITE_PORT;
+import { Link } from "react-router-dom";
 
-const port = import.meta.env.VITE_PORT ? parseInt(import.meta.env.VITE_PORT as string) : 1337
 const Results = () => {
+    const api_url = import.meta.env.VITE_API_URL as string;
     const isconnect = localStorage.getItem("isconnected");
     const quizzId = localStorage.getItem("QuizzId");
     const [score,setScore] = useState(-1);
@@ -16,7 +16,7 @@ const Results = () => {
 
     useEffect(()=> {
         const scoreFunction = async()=> {
-            const response = await fetch(('http://localhost:'+port+'/api/quizz/'+quizzId+'/result'), {
+            const response = await fetch((api_url+'/api/quizz/'+quizzId+'/result'), {
             })
             const data = await response.json();
             setScore(data.score);
@@ -26,7 +26,7 @@ const Results = () => {
     },[])
     useEffect(()=> {
         const correction = async()=> {
-            const response = await fetch(('http://localhost:'+port+'/api/quizz/'+quizzId+'/result/correction'), {
+            const response = await fetch((api_url+'/api/quizz/'+quizzId+'/result/correction'), {
             })
             const data = await response.json();
             const data_question = data.question_def;
@@ -139,9 +139,9 @@ const Results = () => {
                 </div>
             </div>
             <div className="bot_buttons_inscription">
-            <form action='http://localhost:5173/send_email'>
+            <Link to='/send_email'>
                 <button type='submit' className={"button_purple bord_right"}>Valider</button>
-            </form>
+            </Link>
             </div>
         </div> 
     );

@@ -1,10 +1,9 @@
 
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
-
-import.meta.env.VITE_PORT;
-const port = import.meta.env.VITE_PORT ? parseInt(import.meta.env.VITE_PORT as string) : 1337
 const Send_email = () => {
+    const api_url = import.meta.env.VITE_API_URL as string;
     const isconnect = localStorage.getItem("isconnected");
     // const [nom,setNom] = useState("");
     // const [prenom,setPrenom] = useState("");
@@ -20,7 +19,7 @@ const Send_email = () => {
             const myHeaders = new Headers();
             myHeaders.append('Content-Type', 'application/json'); 
             myHeaders.append('Authorization', "Bearer "+token); 
-            const response = await fetch(('http://localhost:'+port+'/api/users/me'), {
+            const response = await fetch((api_url+'/api/users/me'), {
                 headers: myHeaders
             })
             const data = await response.json();
@@ -65,12 +64,12 @@ const Send_email = () => {
             </div>
             <div className="bot_buttons_inscription">
             {email!==""?
-                <form action="http://localhost:5173/CV">
+                <Link to="/CV">
                     <button className={"button_purple bord_right"}>Suivant</button>
-                </form>:
-                <form action="http://localhost:5173/home">
+                </Link>:
+                <Link to="/home">
                 <button className={"button_purple bord_right"}>Suivant</button>
-                </form>
+                </Link>
             }
             </div>
         </div> 

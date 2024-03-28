@@ -1,15 +1,15 @@
 import { useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import coupes from "../img/coupes.jpg";
 
 const Home = () => {
-const isconnect = localStorage.getItem("isconnected");
-const QuizzId = localStorage.getItem("QuizzId") as unknown as number;
-const navigate = useNavigate();
-const handleClick = useCallback(()=>{
-localStorage.clear();
-navigate("/");
-},[navigate])
+    const isconnect = localStorage.getItem("isconnected");
+    const QuizzId = localStorage.getItem("QuizzId") as unknown as number;
+    const navigate = useNavigate();
+    const handleClick = useCallback(()=>{
+        localStorage.clear();
+        navigate("/");
+    },[])
     return (
         <div>
             
@@ -34,26 +34,26 @@ navigate("/");
                 </div>
                 <div className="load_CV">
                     {isconnect==="true"&&QuizzId>0?
-                    <form action="http://localhost:5173/load_cv">
+                    <Link to="/load_cv">
                         <button type='submit' className="button_green">Télécharger un CV</button>
-                    </form>:
-                    <form action="http://localhost:5173/blank">
+                    </Link>:
+                    <Link to="/blank">
                         <button type='submit' className="button_green">Télécharger un CV</button>
-                    </form>
+                    </Link>
                     }
                 </div>
                 <p className="council">Répondez à un QCM pour télécharger un CV de compétences</p>
                 <div className="strait_green"></div>
                 <div className="bot_buttons">
-                    <form action="http://localhost:5173/entreprises">
+                    <Link to="/entreprises">
                         <button type="submit" className="button_purple">Entreprises</button>
-                    </form>
-                    <form action="http://localhost:5173/type_de_qcm">
+                    </Link>
+                    <Link to="/type_de_qcm">
                         <button type="submit" className="button_purple">QCM</button>
-                    </form>
-                    <form action="http://localhost:5173/connexion">
+                    </Link>
+                    <Link to="/connexion">
                         <button type="submit" className="button_purple">Connexion</button>
-                    </form>
+                    </Link>
                 </div>
                 <div className="center">
                     <button onClick={handleClick} className="button_purple_big">Déconnexion</button>

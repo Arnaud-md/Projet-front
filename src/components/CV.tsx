@@ -2,9 +2,10 @@ import { useCallback, useEffect, useState } from "react";
 import cup_or from "../img/coupe_or.jpg";
 import cup_argent from "../img/coupe_argent.jpg";
 import cup_bronze from "../img/coupe_bronze.jpg";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const CV = () => {
+    const api_url = import.meta.env.VITE_API_URL as string;
     const [nom,setNom] = useState("");
     const [prenom,setPrenom] = useState("");
     const [email,setEmail] = useState("");
@@ -15,8 +16,6 @@ const CV = () => {
     const [score,setScore] = useState(-1);
     const [subject,setSubject] = useState("");
     
-    import.meta.env.VITE_PORT;
-    const port = import.meta.env.VITE_PORT ? parseInt(import.meta.env.VITE_PORT as string) : 1337
     const token = localStorage.getItem("token")?.toString() as string | "";
     const QuizzId = localStorage.getItem("QuizzId");
     const navigate = useNavigate();
@@ -26,7 +25,7 @@ const CV = () => {
             const myHeaders = new Headers();
             myHeaders.append('Content-Type', 'application/json'); 
             myHeaders.append('Authorization', "Bearer "+token); 
-            const response = await fetch(('http://localhost:'+port+'/api/users/me'), {
+            const response = await fetch((api_url+'/api/users/me'), {
                 headers: myHeaders
             })
             
@@ -50,7 +49,7 @@ const CV = () => {
 
     useEffect(()=> {
         const scoreFunction = async()=> {
-            const response = await fetch(('http://localhost:'+port+'/api/quizz/'+QuizzId+'/result'), {
+            const response = await fetch((api_url+'/api/quizz/'+QuizzId+'/result'), {
             })
             const data = await response.json();
             setScore(data.score);
@@ -98,9 +97,9 @@ const CV = () => {
                         <div></div>
             }
             <div className="bot_buttons">
-            <form action="http://localhost:5173/home">
+            <Link to="/home">
                 <button className={"button_purple bord_right"}>Accueil</button>
-            </form>
+            </Link>
                 <div className="cv_center_div"><button className={"button_purple"} onClick={handleClick}>Print</button></div>
             </div>
         </div> 

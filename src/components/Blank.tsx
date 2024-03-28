@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Blank = () => {
     const isconnect = localStorage.getItem("isconnected");
     return (
@@ -21,9 +23,9 @@ const Blank = () => {
                         <p className="error_message">Vous devez être connecté et avoir répondu à un questionnaire au cours de votre session pour télécharger votre CV de compétences</p>
                     </div>
             <div className="bot_buttons mtp">
-            <form action="http://localhost:5173/home">
+            <Link to="/home">
                 <button className={"button_purple"}>Accueil</button>
-            </form>
+            </Link>
             </div>
         </div> 
     </div>

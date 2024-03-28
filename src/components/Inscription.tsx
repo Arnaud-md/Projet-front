@@ -2,6 +2,7 @@ import { useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Inscription = () => {
+    const api_url = import.meta.env.VITE_API_URL as string;
     const isconnect = localStorage.getItem("isconnected");
     
     const [nom,setNom]=useState("");
@@ -49,7 +50,7 @@ const Inscription = () => {
     }, []);
     const handleClick = useCallback(async() => {
         if(mdp===mdp2&&nom!==""&&prenom!==""&&email!==""&&(m===true||f===true)&&mdp!=="") {
-        const response = await fetch('http://localhost:8887/api/auth/local/register', {
+        const response = await fetch(api_url+'/api/auth/local/register', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'

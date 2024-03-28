@@ -3,20 +3,19 @@ import cup_bronze from "../img/coupe_bronze.jpg";
 import cup_silver from "../img/coupe_argent.jpg";
 import cv from "../img/CV3_image.jpg";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Load_cv = () => {
+    const api_url = import.meta.env.VITE_API_URL as string;
     const isconnect = localStorage.getItem("isconnected");
     const QuizzId = localStorage.getItem("QuizzId");
 
     const [score,setScore] = useState(-1);
     const [subject,setSubject] = useState("");
 
-    import.meta.env.VITE_PORT;
-    const port = import.meta.env.VITE_PORT ? parseInt(import.meta.env.VITE_PORT as string) : 1337
-
     useEffect(()=> {
         const scoreFunction = async()=> {
-            const response = await fetch(('http://localhost:'+port+'/api/quizz/'+QuizzId+'/result'), {
+            const response = await fetch((api_url+'/api/quizz/'+QuizzId+'/result'), {
             })
             const data = await response.json();
             setScore(data.score);
@@ -57,14 +56,14 @@ const Load_cv = () => {
                         <p className="result_paragraph">Note : {score} / 10</p>
                     </div>
                     <div className="print mg_print">
-                    <form action="http://localhost:5173/CV">    
+                    <Link to="/CV">    
                         <button className="button_green_cv">Print</button>
-                    </form>
+                    </Link>
                     </div>
             <div className="bot_buttons mtp">
-            <form action="http://localhost:5173/home">
+            <Link to="/home">
                 <button className={"button_purple"}>Accueil</button>
-            </form>
+            </Link>
             </div>
         </div> 
     </div>

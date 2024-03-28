@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Connexion = () => {
 const [email, setEmail]=useState("");
@@ -74,9 +74,9 @@ const handleClick = useCallback(async() => {
                         <p>Adresse email ou mot de passe invalide</p>
                     </div>}
                     <p className="mbp">Nouvel utilisateur : inscrivez-vous</p>
-                    <form action="http://localhost:5173/inscription">
+                    <Link to="/inscription">
                     <button type="submit" className="button_purple inscription_button">Inscription</button>
-                    </form>
+                    </Link>
                 </div>
             </div>
         </div> 
