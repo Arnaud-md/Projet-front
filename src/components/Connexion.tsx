@@ -7,6 +7,7 @@ const [email, setEmail]=useState("");
 const [mdp, setMdp]=useState("");
 const [iscorrect, setIscorrect]=useState(true);
 const navigate = useNavigate();
+const api_url = import.meta.env.VITE_API_URL as string;
 
 const isconnect = localStorage.getItem("isconnected");
 
@@ -19,7 +20,7 @@ const handleChange2 = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
 }, [])
 
 const handleClick = useCallback(async() => {
-    const response = await fetch('http://localhost:8887/api/auth/local', {
+    const response = await fetch(api_url+'/api/auth/local', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
