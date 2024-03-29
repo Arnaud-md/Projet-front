@@ -66,7 +66,9 @@ const handleClick = useCallback(async() => {
                     </div>
                     <div className="placeholder mbp">
                         <p>Mot de passe</p>
+                        <form>
                         <input onChange={handleChange2} type="password" className="mdp"></input>
+                        </form>
                     </div>
                     <button onClick={handleClick} className="button_purple connect_button">Connexion</button>
                     {iscorrect?
