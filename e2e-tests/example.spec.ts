@@ -40,10 +40,13 @@ test('test_connexion_inscr_elts', async ({ page }) => {
 test('test_accueil', async ({ page }) => {
   await page.goto('http://localhost:5173/');
   await expect(page.getByText('Non connecté')).toHaveText('Non connecté');
-  await expect(page.locator('div').filter({ hasText: /^Non connecté$/ }).locator('div')).toHaveCSS('width','15px');
-  await expect(page.getByRole('heading', { name: 'CV de compétences' })).toHaveText('CV de compétences');
+  await expect(page.locator('div').filter({ hasText: /^Non connecté$/ })
+  .locator('div')).toHaveCSS('width','15px');
+  await expect(page.getByRole('heading', { name: 'CV de compétences' }))
+  .toHaveText('CV de compétences');
   await expect(page.getByRole('img')).toBeVisible();
-  await expect(page.getByText('Répondez à un QCM pour télé')).toHaveText('Répondez à un QCM pour télécharger un CV de compétences');
+  await expect(page.getByText('Répondez à un QCM pour télé'))
+  .toHaveText('Répondez à un QCM pour télécharger un CV de compétences');
   await expect(page.locator('.strait_green')).toBeVisible();
 });
 
@@ -51,5 +54,6 @@ test('test_light_types_qcm', async ({ page }) => {
   await page.goto('http://localhost:5173/');
   await page.getByRole('button', { name: 'QCM' }).click();
   const color = "rgb(236, 59, 59)"
-  await expect(page.locator('.light_off')).toHaveCSS('background-color', color);
+  await expect(page.locator('.light_off')).
+  toHaveCSS('background-color', color);
 });
